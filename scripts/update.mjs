@@ -8,16 +8,27 @@ for (let i = 0; i < args.length; i++) {
   if (args[i].startsWith('--')) opt[args[i].slice(2)] = args[++i]; else pos.push(args[i]);
 }
 const [id, priceArg, stockArg, statusArg] = pos;
-const USAGE = '用法: node scripts/update.mjs <id> <price> [stock] [status] [--store 店家] [--url 連結] [--dir data] [--note 文字]';
+const USAGE = '用法: node scripts/update.mjs <id> <price> [stock] [status] [--store 店家] [--url 連結] [--dir data] [--note 文字]\n  新增商品: node scripts/update.mjs <新id> <價格> [庫存] --name 名稱 [--category 分類] --store 店家 --url 連結 [--pick unique --reason 理由]';
 if (!id || priceArg === undefined || isNaN(Number(priceArg))) { console.error(USAGE); process.exit(1); }
 const dir = opt.dir || path.join(path.dirname(new URL(import.meta.url).pathname), '..', 'data');
 const fi = path.join(dir, 'items.json'), fl = path.join(dir, 'log.json');
 const data = JSON.parse(fs.readFileSync(fi, 'utf8'));
 const log = fs.existsSync(fl) ? JSON.parse(fs.readFileSync(fl, 'utf8')) : { log: [] };
-const it = data.items.find(x => x.id === id);
-if (!it) { console.error('找不到商品 id: ' + id); process.exit(1); }
+let it = data.items.find(x => x.id === id);
 const p = n => String(n).padStart(2, '0'), d = new Date();
 const date = `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`, ts = `${date} ${p(d.getHours())}:${p(d.getMinutes())}`;
+if (!it && !opt.name) { console.error('找不到商品 id: ' + id + '（新增商品需 --name）'); process.exit(1); }
+if (opt.pick && opt.pick !== 'unique') { console.error('--pick 目前只支援 unique'); process.exit(1); }
+if (opt.pick === 'unique' && !opt.reason && !(it && it.reason)) { console.error('--pick unique 需要 --reason 理由'); process.exit(1); }
+if (!it) {
+  const pr = Number(priceArg), st = opt.store || '';
+  it = { id, name: opt.name, category: opt.category || '其他', store: st, url: opt.url || '', baseline: pr, current: pr, stock: stockArg || '有貨', status: '無變化', purchased: false, note: opt.note || '', lastChecked: ts, history: [{ date, price: pr }], lowest: pr, target: null,
+    offers: [{ store: st, url: opt.url || '', price: pr, stock: stockArg || '有貨', lastChecked: ts, note: '', history: [{ date, price: pr }] }] };
+  data.items.push(it);
+  log.log.unshift({ date: ts, id, name: it.name, type: '新增', text: `新增追蹤 NT$${pr}` + (opt.pick ? '（獨特精選）' : '') });
+}
+if (opt.pick) it.pick = opt.pick;
+if (opt.reason) it.reason = opt.reason;
 const price = Number(priceArg);
 // 舊資料沒有 offers 時，由舊欄位建立
 if (!Array.isArray(it.offers) || !it.offers.length)
@@ -45,7 +56,7 @@ it.current = c.price; it.store = c.store; it.url = c.url || ''; it.stock = c.sto
 it.history = it.history && it.history.length ? it.history : [{ date, price: it.baseline }];
 const last = it.history[it.history.length - 1];
 if (last.price !== it.current) it.history.push({ date, price: it.current });
-it.status = statusArg || (it.current < old ? '降價' : (oldStock === '缺貨' && it.stock !== '缺貨') ? '補貨' : it.stock === '缺貨' ? '缺貨' : it.status);
+it.status = statusArg || (it.pick === 'unique' ? '無變化' : (it.current < old ? '降價' : (oldStock === '缺貨' && it.stock !== '缺貨') ? '補貨' : it.stock === '缺貨' ? '缺貨' : it.status));
 it.lowest = Math.min(it.lowest || Infinity, it.current, it.baseline || Infinity);
 it.lastChecked = ts; data.updated = ts;
 if (opt.note && !opt.store) it.note = opt.note;

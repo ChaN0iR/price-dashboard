@@ -1,7 +1,7 @@
 (function(){
 'use strict';
-var KEY='pd-state-v2',CATS=['服飾','重訓器材','補給品','其他'];
-var S={items:[],log:[],updated:'',local:false},tab='watch',$=function(i){return document.getElementById(i)};
+var KEY='pd-state-v2',FKEY='pd-fb-v1',CATS=['服飾','重訓器材','補給品','其他'];
+var S={items:[],log:[],updated:'',local:false},FB={repo:{},local:{}},tab='watch',$=function(i){return document.getElementById(i)};
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function money(n){return n==null||n===''?'-':'NT$'+Number(n).toLocaleString('en-US')}
 function today(){var d=new Date(),p=function(n){return ('0'+n).slice(-2)};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())}
@@ -20,18 +20,33 @@ function norm(i){
  i.lowest=Math.min.apply(null,prices.concat(i.lowest>0?[i.lowest]:[]));
  i.target=i.target===''||i.target==null?null:Number(i.target);
  i.stock=i.stock||'有貨';i.status=i.status||'無變化';i.category=i.category||'其他';return i}
+function uniq(i){return i.pick==='unique'}
+function vote(id){var l=FB.local[id];if(l)return l.vote==='none'?'':l.vote;var r=FB.repo[id];return r?r.vote:''}
+function fbSave(){try{localStorage.setItem(FKEY,JSON.stringify(FB.local))}catch(e){}}
+function rec(i,v){return {id:i.id,vote:v,name:i.name,category:i.category,store:i.store,price:i.current,date:today()}}
+function setVote(id,v){var i=S.items.filter(function(x){return x.id===id})[0];if(!i)return;
+ var cur=vote(id);FB.local[id]=rec(i,cur===v?'none':v);fbSave();render()}
+function merged(){var m={};Object.keys(FB.repo).forEach(function(k){m[k]=FB.repo[k]});
+ Object.keys(FB.local).forEach(function(k){if(FB.local[k].vote==='none')delete m[k];else m[k]=FB.local[k]});
+ return Object.keys(m).map(function(k){return m[k]})}
+function pending(){return Object.keys(FB.local).map(function(k){return FB.local[k]}).filter(function(r){var p=FB.repo[r.id];return r.vote==='none'?!!p:!p||p.vote!==r.vote})}
+function toMap(a){var m={};(Array.isArray(a)?a:[]).forEach(function(r){if(r&&r.id&&(r.vote==='like'||r.vote==='dislike'))m[r.id]=r});return m}
+function issueUrl(){var p=pending().map(function(r){return {id:r.id,vote:r.vote==='none'?'clear':r.vote,name:r.name,category:r.category,store:r.store,price:r.price,date:r.date}});
+ return 'https://github.com/ChaN0iR/price-dashboard/issues/new?title='+encodeURIComponent('feedback')+'&body='+encodeURIComponent(JSON.stringify(p))}
 function load(){
  return Promise.all([fetch('data/items.json?'+Date.now()).then(function(r){return r.json()}),
-  fetch('data/log.json?'+Date.now()).then(function(r){return r.json()}).catch(function(){return {log:[]}})]).then(function(a){
+  fetch('data/log.json?'+Date.now()).then(function(r){return r.json()}).catch(function(){return {log:[]}}),
+  fetch('data/feedback.json?'+Date.now()).then(function(r){return r.json()}).catch(function(){return []})]).then(function(a){
+  FB.repo=toMap(a[2]);try{FB.local=JSON.parse(localStorage.getItem(FKEY))||{}}catch(e){FB.local={}}
   S.items=a[0].items;S.updated=a[0].updated;S.log=a[1].log||[];S.local=false;
   var l=null;try{l=JSON.parse(localStorage.getItem(KEY))}catch(e){}
   if(l&&l.items){S.items=l.items;S.log=l.log||S.log;S.local=true}
   S.items.forEach(norm);render()}).catch(function(e){$('notice').textContent='載入失敗：'+e.message})}
 function save(){S.local=true;try{localStorage.setItem(KEY,JSON.stringify({items:S.items,log:S.log}))}catch(e){}}
 function pct(i){return i.baseline?(i.current-i.baseline)/i.baseline*100:0}
-function isWatch(i){return !i.purchased&&(i.status==='降價'||i.status==='補貨'||i.status==='低庫存')}
-function hit(i){return i.target!=null&&i.current>0&&i.current<=i.target&&i.stock!=='缺貨'}
-function score(i){if(i.purchased)return 1e6;var s=pct(i);if(hit(i))s-=1000;if(i.status==='降價'||i.status==='補貨')s-=500;if(i.stock==='缺貨')s+=200;return s}
+function isWatch(i){return !uniq(i)&&!i.purchased&&(i.status==='降價'||i.status==='補貨'||i.status==='低庫存')}
+function hit(i){return !uniq(i)&&i.target!=null&&i.current>0&&i.current<=i.target&&i.stock!=='缺貨'}
+function score(i){if(uniq(i))return 0;if(i.purchased)return 1e6;var s=pct(i);if(hit(i))s-=1000;if(i.status==='降價'||i.status==='補貨')s-=500;if(i.stock==='缺貨')s+=200;return s}
 function spark(h){
  if(h.length<2)return '<svg class="spark" viewBox="0 0 100 32" preserveAspectRatio="none"><line x1="0" y1="16" x2="100" y2="16" stroke="currentColor" stroke-opacity=".3" stroke-dasharray="3"/></svg>';
  var p=h.map(function(x){return x.price}),mn=Math.min.apply(null,p),mx=Math.max.apply(null,p),r=mx-mn||1;
@@ -43,39 +58,45 @@ function offerList(i){
  return '<ul class="offers">'+i.offers.map(function(o){var u=/^https?:/.test(o.url||'');
   return '<li class="'+(o===i.cheapest?'best':'')+(o.stock==='缺貨'?' oos':'')+'"><span>'+esc(o.store)+'</span><span>'+(o.price>0?money(o.price):'-')+' <small>'+esc(o.stock)+'</small></span>'
   +(u?'<a href="'+esc(o.url)+'" target="_blank" rel="noopener" data-link>前往</a>':'<span class="muted">無連結</span>')+'</li>'}).join('')+'</ul>'}
+function fbBtns(i){var v=vote(i.id);
+ return '<div class="fb"><button type="button" data-v="like" data-id="'+esc(i.id)+'" class="'+(v==='like'?'on':'')+'" aria-pressed="'+(v==='like')+'">喜歡</button><button type="button" data-v="dislike" data-id="'+esc(i.id)+'" class="'+(v==='dislike'?'on':'')+'" aria-pressed="'+(v==='dislike')+'">不喜歡</button></div>'}
 function card(i){
- var c=pct(i),cs=c<0?'down':c>0?'up':'';
+ var u=uniq(i),c=u?0:pct(i),cs=c<0?'down':c>0?'up':'';
  return '<div class="item'+(hit(i)?' hit':'')+(i.purchased?' done':'')+'" data-id="'+esc(i.id)+'">'
- +'<div class="top"><span class="name">'+esc(i.name)+'</span><span class="tag'+(i.status==='降價'||i.status==='補貨'?' g':'')+'">'+esc(i.status)+'</span></div>'
+ +'<div class="top"><span class="name">'+esc(i.name)+'</span>'+(u?'<span class="tag">獨特精選</span>':'<span class="tag'+(i.status==='降價'||i.status==='補貨'?' g':'')+'">'+esc(i.status)+'</span>')+'</div>'
  +'<div class="muted"><span class="badge">'+esc(i.store)+'</span> '+(i.offers.length>1?'共 '+i.offers.length+' 家 / ':'')+esc(i.category)+(i.purchased?' / 已購買':'')+'</div>'
  +'<div><span class="price">'+money(i.current)+'</span> <span class="'+cs+'">'+(c?(c>0?'+':'')+c.toFixed(1)+'%':'')+'</span></div>'
- +spark(i.history)
+ +(u&&i.reason?'<div class="reason">'+esc(i.reason)+'</div>':'')
+ +(u?'':spark(i.history))
  +offerList(i)
- +'<div class="muted">基準 '+money(i.baseline)+' / 最低 '+money(i.lowest)+(i.target!=null?' / 目標 '+money(i.target):'')+'</div>'
- +'<div class="muted">'+esc(i.stock)+(hit(i)?' / 已達目標價':'')+'</div></div>'}
+ +(u?'':'<div class="muted">基準 '+money(i.baseline)+' / 最低 '+money(i.lowest)+(i.target!=null?' / 目標 '+money(i.target):'')+'</div>')
+ +'<div class="muted">'+esc(i.stock)+(hit(i)?' / 已達目標價':'')+'</div>'+fbBtns(i)+'</div>'}
 function sorted(a){
  var m=$('sort').value,b=a.slice();
+ if(tab==='unique'){var r=function(i){return vote(i.id)?1:0};return b.sort(function(x,y){return r(x)-r(y)})}
  b.sort(function(x,y){if(m==='price')return x.current-y.current;if(m==='drop')return pct(x)-pct(y);
   if(m==='checked')return String(y.lastChecked||'').localeCompare(String(x.lastChecked||''));return score(x)-score(y)});return b}
 function render(){
- var it=S.items,act=it.filter(function(i){return !i.purchased});
- var drops=it.filter(function(i){return i.status==='降價'}).length;
+ var it=S.items,act=it.filter(function(i){return !i.purchased&&!uniq(i)});
+ var drops=it.filter(function(i){return !uniq(i)&&i.status==='降價'}).length;
  var sav=act.reduce(function(s,i){return s+Math.max(0,i.baseline-i.current)},0);
  $('summary').innerHTML=[['追蹤商品',it.length],['降價中',drops],['已達目標',it.filter(hit).length],['相較基準可省',money(sav)]]
   .map(function(x){return '<div class="card"><span class="muted">'+x[0]+'</span><b>'+x[1]+'</b></div>'}).join('');
  $('updated').textContent='更新 '+(S.updated||'-');
  $('notice').textContent=S.local?'目前顯示本機修改版本（尚未提交到倉庫），可匯出，或按重設還原。':'';
- var tabs=[['watch','關注'],['all','全部']].concat(CATS.map(function(c){return [c,c]}));
+ var tabs=[['watch','關注'],['unique','獨特精選'],['all','全部']].concat(CATS.map(function(c){return [c,c]}));
  $('tabs').innerHTML=tabs.map(function(t){return '<button data-t="'+t[0]+'" class="'+(tab===t[0]?'on':'')+'">'+t[1]+'</button>'}).join('');
  var q=$('q').value.trim().toLowerCase(),st=$('status').value;
  var f=it.filter(function(i){
   if(tab==='watch'&&!(isWatch(i)||hit(i)))return false;
-  if(tab!=='watch'&&tab!=='all'&&i.category!==tab)return false;
+  if(tab==='unique'&&!uniq(i))return false;
+  if(tab!=='watch'&&tab!=='all'&&tab!=='unique'&&i.category!==tab)return false;
   if(st&&i.status!==st&&!(st==='低庫存'&&i.stock==='低庫存')&&!(st==='缺貨'&&i.stock==='缺貨'))return false;
   if(q&&(i.name+' '+i.offers.map(function(o){return o.store}).join(' ')).toLowerCase().indexOf(q)<0)return false;return true});
  var w=it.filter(function(i){return isWatch(i)||hit(i)});
  $('watch').innerHTML=(tab==='all'&&!q&&!st&&w.length)?'<h2>關注清單（降價 / 補貨）</h2><div class="grid">'+sorted(w).map(card).join('')+'</div><h2 style="margin-top:14px">全部商品</h2>':'';
  $('list').innerHTML=f.length?sorted(f).map(card).join(''):'<div class="muted">'+(tab==='watch'?'目前沒有降價或補貨的商品':'沒有符合的商品')+'</div>';
+ var ps=pending(),fl=$('fblink');fl.hidden=!ps.length;fl.href=ps.length?issueUrl():'#';fl.textContent='送出回饋（'+ps.length+'）';
  $('log').innerHTML=S.log.slice(0,30).map(function(l){return '<li><span class="muted">'+esc(l.date)+'</span><br>'+esc(l.name?l.name+'：':'')+esc(l.text)+'</li>'}).join('')||'<li class="muted">尚無變動</li>'}
 function logAdd(i,type,text){S.log.unshift({date:now(),id:i?i.id:null,name:i?i.name:'',type:type,text:text})}
 function drawer(id){
@@ -84,7 +105,7 @@ function drawer(id){
  $('panel').innerHTML='<h2>'+esc(i.name)+'</h2><div class="muted">'+esc(i.store)+' / '+esc(i.category)+'</div>'
  +'<p><span class="price">'+money(i.current)+'</span> '+esc(i.stock)+' / '+esc(i.status)+'</p>'
  +spark(i.history)+'<p class="muted">基準 '+money(i.baseline)+'；歷史最低 '+money(i.lowest)+'；目標 '+money(i.target)+(hit(i)?'（已達目標）':'')+'<br>最後檢查 '+esc(i.lastChecked||'-')+'</p>'
- +(i.note?'<p>'+esc(i.note)+'</p>':'')
+ +(uniq(i)&&i.reason?'<p class="reason">'+esc(i.reason)+'</p>':'')+(i.note?'<p>'+esc(i.note)+'</p>':'')+fbBtns(i)
  +'<h2>各店報價</h2>'+i.offers.map(function(o){var u=/^https?:/.test(o.url||'');
   return '<div class="offer'+(o===i.cheapest?' best':'')+'"><div class="top"><b>'+esc(o.store)+(o===i.cheapest?' <span class="tag g">最低</span>':'')+'</b><span>'+(o.price>0?money(o.price):'-')+' / '+esc(o.stock)+'</span></div>'
   +'<div class="muted">檢查 '+esc(o.lastChecked||'-')+(o.note?' / '+esc(o.note):'')+'</div>'+(o.history.length?spark(o.history)+'<div class="muted">'+o.history.slice().reverse().slice(0,8).map(function(h){return esc(h.date)+' '+money(h.price)}).join('；')+'</div>':'')
@@ -125,6 +146,7 @@ function submitForm(){
  norm(n);S.updated=now();save();$('form').close();$('drawer').hidden=true;render()}
 function download(name,obj){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(obj,null,1)],{type:'application/json'}));a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)}
 document.addEventListener('click',function(e){
+ var v=e.target.closest('[data-v]');if(v){e.stopPropagation();setVote(v.getAttribute('data-id'),v.getAttribute('data-v'));if(!$('drawer').hidden)drawer(v.getAttribute('data-id'));return}
  var t=e.target.closest('[data-t]');if(t){tab=t.getAttribute('data-t');render();return}
  var a=e.target.closest('[data-a]');
  if(a){var id=$('panel').getAttribute('data-id'),it=S.items.filter(function(x){return x.id===id})[0],k=a.getAttribute('data-a');
@@ -146,6 +168,11 @@ $('file').onchange=function(){var r=new FileReader(),fl=this.files[0];if(!fl)ret
   if(d.items&&Array.isArray(d.items)){S.items=d.items.map(norm);S.updated=d.updated||now()}
   else if(Array.isArray(d.log)){S.log=d.log}else throw new Error('格式不符');
   save();render()}catch(x){alert('匯入失敗：'+x.message)}};r.readAsText(fl);this.value=''};
+$('fbexport').onclick=function(){download('feedback.json',merged())};
+$('fbimport').onclick=function(){$('ffile').click()};
+$('ffile').onchange=function(){var r=new FileReader(),fl=this.files[0];if(!fl)return;
+ r.onload=function(){try{var d=JSON.parse(r.result);if(!Array.isArray(d))throw new Error('需為陣列');
+  var m=toMap(d);Object.keys(m).forEach(function(k){if(!FB.local[k])FB.repo[k]=m[k]});render()}catch(x){alert('匯入失敗：'+x.message)}};r.readAsText(fl);this.value=''};
 $('reset').onclick=function(){if(confirm('清除本機修改並還原為倉庫資料？')){localStorage.removeItem(KEY);load()}};
 load();
 })();

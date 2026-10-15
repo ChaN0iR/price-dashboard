@@ -35,3 +35,7 @@ a{color:inherit}
 .offer{border:1px solid var(--bd);border-radius:6px;padding:8px;margin:6px 0}.offer.best{border-color:var(--good)}
 fieldset{border:1px solid var(--bd);border-radius:6px;margin:8px 0}.oe{display:grid;grid-template-columns:1fr 5.5em 5.5em auto;gap:4px;margin-bottom:6px}.oe .w{grid-column:1/-1}
 dialog .oe input,dialog .oe select{width:auto;min-width:0}dialog .oe .w{width:100%}
+
+.fb{display:flex;gap:6px;margin-top:4px}.fb button{padding:2px 10px;font-size:13px;color:var(--mu)}.fb button.on{color:var(--fg);border-color:var(--ac);font-weight:600}
+.reason{font-size:13px;color:var(--mu);border-left:2px solid var(--bd);padding-left:8px}
+#fblink{font-size:14px;color:var(--ac);align-self:center}

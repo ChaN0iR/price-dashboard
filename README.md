@@ -52,3 +52,25 @@ items.json 每項商品新增：
 ## 功能
 
 分頁（關注、全部、服飾、重訓器材、補給品、其他）、摘要、迷你價格走勢、詳細抽屜（完整歷史與備註）、新增/編輯/刪除、匯出/匯入 JSON（匯出同時下載 items.json 與 log.json）、深色模式跟隨系統。
+
+## 獨特精選與回饋（v4）
+
+items.json 商品可加：
+
+- `pick`: `"unique"` 表示獨特精選（高價但不錯、不一定有價格競爭力）。這類商品只出現在「獨特精選」分頁（及全部/分類分頁），不參與「價格最好優先」排序、「降價」狀態與摘要統計、目標價提醒。
+- `reason`: 短理由，顯示在卡片上。
+
+新增獨特精選（腳本會建立商品，不會產生降價狀態）：
+
+    node scripts/update.mjs <新id> <價格> 有貨 --name 名稱 --category 服飾 --store 店家 --url 連結 --pick unique --reason "理由"
+
+`--pick unique` 必須搭配 `--reason`；對既有 id 也可補上 `--pick` / `--reason`。
+
+### 回饋 data/feedback.json
+
+陣列，每筆：`{ "id", "vote": "like|dislike", "name", "category", "store", "price", "date" }`。
+
+- 每張卡片有「喜歡 / 不喜歡」（再按一次取消），存於 localStorage（`pd-fb-v1`）；獨特精選分頁未評分者排最前。
+- 頁面讀取 `data/feedback.json`，與本機合併，衝突時以本機為準。
+- 「匯出回饋」下載合併後的 `feedback.json`，取代 repo 內檔案後提交；「匯入回饋」匯入檔案（本機已有的票不被覆蓋）。
+- 「送出回饋（N）」為選用：開啟預填的 GitHub 新 issue（title `feedback`，body 為尚未寫入 repo 的票數 JSON，取消票為 `vote: "clear"`），按 Submit 即可，助理再讀 issue 寫入 feedback.json。需登入 GitHub；票數很多時網址可能過長，請改用匯出。

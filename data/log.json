@@ -1,6 +1,90 @@
 {
  "log": [
   {
+   "date": "2026-10-15 12:37",
+   "id": "shopee-tuk-xtgrip",
+   "name": "XT-GRIP 快鎖組合式啞鈴零配件（TUK 體育刻）",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$739 → NT$639；最低價 NT$739 → NT$639（蝦皮 TUK）；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-plate-5kg",
+   "name": "Tixteel XT 六邊型槓片 5KG 4入",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$2680 → NT$2530；最低價 NT$2680 → NT$2530（蝦皮 TUK）；庫存 有貨 → 低庫存；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-plate-2.5kg",
+   "name": "Tixteel XT 六邊型槓片 2.5KG 4入",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$1450 → NT$1350；最低價 NT$1450 → NT$1350（蝦皮 TUK）；庫存 有貨 → 低庫存；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-plate-1kg",
+   "name": "Tixteel XT 六邊型槓片 1KG 8入",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$1100 → NT$1000；最低價 NT$1100 → NT$1000（蝦皮 TUK）；庫存 有貨 → 低庫存；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-grip-23kgsingle",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 單支",
+   "type": "價格",
+   "text": "新增報價 蝦皮 TUK NT$4350；最低價 NT$4500 → NT$4350（蝦皮 TUK）；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-grip-53kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 53kg 一對",
+   "type": "價格",
+   "text": "新增報價 蝦皮 TUK NT$19650；最低價 NT$19800 → NT$19650（蝦皮 TUK）；庫存 有貨 → 低庫存；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-grip-43kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 43kg 一對",
+   "type": "價格",
+   "text": "新增報價 蝦皮 TUK NT$15490；最低價 NT$15640 → NT$15490（蝦皮 TUK）；庫存 有貨 → 低庫存；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-grip-33kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 33kg 一對",
+   "type": "價格",
+   "text": "新增報價 蝦皮 TUK NT$12810；最低價 NT$12960 → NT$12810（蝦皮 TUK）；庫存 有貨 → 低庫存；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:37",
+   "id": "tixteel-grip-23kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 一對",
+   "type": "價格",
+   "text": "新增報價 蝦皮 TUK NT$8650；最低價 NT$8800 → NT$8650（蝦皮 TUK）；狀態 無變化 → 降價"
+  },
+  {
+   "date": "2026-10-15 12:36",
+   "id": "satisfy-techsilk-vest",
+   "name": "Satisfy TechSilk Drift Cordura 5L 水袋背心",
+   "type": "新增",
+   "text": "新增追蹤 NT$8320（獨特精選）"
+  },
+  {
+   "date": "2026-10-15 12:36",
+   "id": "ciele-vlv-halfzip-oak",
+   "name": "Ciele VLV Halfzip（Oak）",
+   "type": "新增",
+   "text": "新增追蹤 NT$5760（獨特精選）"
+  },
+  {
+   "date": "2026-10-15 12:36",
+   "id": "satisfy-oakley-scar",
+   "name": "SATISFY × Oakley Scar 太陽眼鏡",
+   "type": "新增",
+   "text": "新增追蹤 NT$6336（獨特精選）"
+  },
+  {
    "date": "2026-10-15 11:40",
    "id": "buddy-creatine-1kg",
    "name": "BUDDY 巴弟 微粉化一水肌酸 1kg",

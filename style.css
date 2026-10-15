@@ -1,5 +1,5 @@
-:root{--bg:#fafafa;--fg:#1a1a1a;--mu:#777;--bd:#e2e2e2;--card:#fff;--ac:#1a1a1a;--good:#1b7f3b;--bad:#b3261e;--hl:#e8f5ec}
-@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#eee;--mu:#999;--bd:#2c2c2c;--card:#1b1b1b;--ac:#eee;--good:#5fd38a;--bad:#ff8a80;--hl:#17301f}}
+:root{--bg:#fafafa;--fg:#1a1a1a;--mu:#777;--bd:#e2e2e2;--card:#fff;--ac:#1a1a1a;--good:#1b7f3b;--bad:#b3261e;--hl:#e8f5ec;--drop:#d84315;--dropbg:#fff1ec}
+@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#eee;--mu:#999;--bd:#2c2c2c;--card:#1b1b1b;--ac:#eee;--good:#5fd38a;--bad:#ff8a80;--hl:#17301f;--drop:#ff7043;--dropbg:#2e1a14}}
 *{box-sizing:border-box}body{margin:0;padding:16px;max-width:1100px;margin:auto;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,"Noto Sans TC",sans-serif}
 h1{font-size:20px;margin:0}h2{font-size:15px;margin:0 0 8px}header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
 .muted{color:var(--mu);font-size:13px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0}
@@ -39,3 +39,12 @@ dialog .oe input,dialog .oe select{width:auto;min-width:0}dialog .oe .w{width:10
 .fb{display:flex;gap:6px;margin-top:4px}.fb button{padding:2px 10px;font-size:13px;color:var(--mu)}.fb button.on{color:var(--fg);border-color:var(--ac);font-weight:600}
 .reason{font-size:13px;color:var(--mu);border-left:2px solid var(--bd);padding-left:8px}
 #fblink{font-size:14px;color:var(--ac);align-self:center}
+
+.tile{text-align:left;cursor:pointer;display:block;width:100%}
+.tile.drop{background:var(--drop);border-color:var(--drop);color:#fff}.tile.drop .muted{color:#fff;opacity:.9}.tile.drop b{font-size:26px}
+.item.drop{border-left:6px solid var(--drop);background:var(--dropbg)}.item.drop .price{color:var(--drop)}
+.tag.drop{background:var(--drop);border-color:var(--drop);color:#fff;font-weight:700}
+.drophead{color:var(--drop);border-left:4px solid var(--drop);padding-left:8px}
+nav button.dropt{color:var(--drop);font-weight:600}
+.item.trash{filter:grayscale(1) brightness(.75);opacity:.75;cursor:default}
+.fb button.danger,button.danger{color:var(--bad);border-color:var(--bad)}

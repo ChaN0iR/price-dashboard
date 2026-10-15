@@ -14,6 +14,11 @@ const dir = opt.dir || path.join(path.dirname(new URL(import.meta.url).pathname)
 const fi = path.join(dir, 'items.json'), fl = path.join(dir, 'log.json');
 const data = JSON.parse(fs.readFileSync(fi, 'utf8'));
 const log = fs.existsSync(fl) ? JSON.parse(fs.readFileSync(fl, 'utf8')) : { log: [] };
+// 待刪除：feedback.json 中 vote 為 dislike 的商品不更新（等使用者確認後由每日追蹤從 items.json 刪除）
+try {
+  const fb = JSON.parse(fs.readFileSync(path.join(dir, 'feedback.json'), 'utf8'));
+  if (Array.isArray(fb) && fb.some(r => r && r.id === id && r.vote === 'dislike')) { console.log('略過：' + id + ' 在待刪除（feedback 不喜歡），不更新'); process.exit(0); }
+} catch (e) { /* 沒有 feedback.json 就照常 */ }
 let it = data.items.find(x => x.id === id);
 const p = n => String(n).padStart(2, '0'), d = new Date();
 const date = `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`, ts = `${date} ${p(d.getHours())}:${p(d.getMinutes())}`;

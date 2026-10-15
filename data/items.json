@@ -174,8 +174,8 @@
    "id": "tixteel-grip-33kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 33kg 一對",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-33kg/",
    "baseline": 12960,
    "current": 12960,
    "stock": "有貨",
@@ -192,6 +192,20 @@
    "lowest": 12960,
    "target": null,
    "offers": [
+    {
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-33kg/",
+     "price": 12960,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 12:00",
+     "note": "商品頁價格",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 12960
+      }
+     ]
+    },
     {
      "store": "Tixteel 官網",
      "url": "https://www.tixteel.com",
@@ -212,8 +226,8 @@
    "id": "tixteel-grip-43kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 43kg 一對",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-43kg/",
    "baseline": 15640,
    "current": 15640,
    "stock": "有貨",
@@ -230,6 +244,20 @@
    "lowest": 15640,
    "target": null,
    "offers": [
+    {
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-43kg/",
+     "price": 15640,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 12:00",
+     "note": "商品頁價格",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 15640
+      }
+     ]
+    },
     {
      "store": "Tixteel 官網",
      "url": "https://www.tixteel.com",
@@ -250,8 +278,8 @@
    "id": "tixteel-grip-53kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 53kg 一對",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-53kg/",
    "baseline": 19800,
    "current": 19800,
    "stock": "有貨",
@@ -268,6 +296,20 @@
    "lowest": 19800,
    "target": null,
    "offers": [
+    {
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-53kg/",
+     "price": 19800,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 12:00",
+     "note": "商品頁價格",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 19800
+      }
+     ]
+    },
     {
      "store": "Tixteel 官網",
      "url": "https://www.tixteel.com",

@@ -1,0 +1,19 @@
+*{box-sizing:border-box}body{margin:0;font:14px/1.5 system-ui,"Noto Sans TC",sans-serif;color:#111;background:#fafafa}
+main{max-width:1100px;margin:0 auto;padding:24px 16px}h1{font-size:20px;margin:0 0 4px;font-weight:600}
+#meta,.note{color:#666;font-size:12px}.note{margin:8px 0 16px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+input,select,button{font:inherit;padding:6px 8px;border:1px solid #ccc;border-radius:4px;background:#fff}
+button{cursor:pointer}button:hover{background:#eee}#q{min-width:220px}
+#sum{display:flex;gap:16px;margin-bottom:12px;color:#444}#sum b{font-size:18px;color:#111}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e3e3e3}
+th,td{padding:8px 10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+th{font-size:12px;color:#666;font-weight:500}.n{text-align:right;font-variant-numeric:tabular-nums}
+td small{display:block;color:#777}a{color:#111}
+.b{display:inline-block;padding:1px 8px;border:1px solid #bbb;border-radius:10px;font-size:12px}
+.b.降價{background:#111;color:#fff;border-color:#111}.b.補貨{border-color:#111;color:#111}.b.缺貨{color:#999;border-style:dashed}
+.down{color:#0a6b2d}.up{color:#b00020}.ed{white-space:nowrap}
+body:not(.editing) .ed{display:none}#empty{padding:24px;text-align:center;color:#777}
+dialog{border:1px solid #ccc;border-radius:6px;width:min(420px,92vw)}
+dialog label{display:block;margin:8px 0;font-size:12px;color:#555}dialog input:not([type=checkbox]),dialog select{display:block;width:100%;margin-top:2px}
+.chk{display:flex;gap:6px;align-items:center}.act{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+@media(max-width:700px){th:nth-child(2),td:nth-child(2),th:nth-child(8),td:nth-child(8){display:none}}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>商品追蹤儀表板</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><h1>商品追蹤儀表板</h1><div id="meta"></div></header>
+<p class="note">資料由助理每天更新至倉庫的 data/items.json。網頁內的編輯僅存在此瀏覽器，需按「匯出 JSON」再提交到倉庫才會成為正式資料。</p>
+<section class="bar">
+<input id="q" placeholder="搜尋名稱、店家、備註">
+<select id="cat"></select>
+<select id="st"><option value="">全部狀態</option><option>降價</option><option>補貨</option><option>缺貨</option><option>無變化</option></select>
+<label><input type="checkbox" id="edit"> 編輯模式</label>
+<span id="tools" hidden>
+<button id="add">新增商品</button><button id="exp">匯出 JSON</button><button id="reset">重設為倉庫資料</button></span>
+</section>
+<section id="sum"></section>
+<table><thead><tr><th>商品</th><th>店家</th><th class="n">基準價</th><th class="n">目前價</th><th class="n">變動</th><th>庫存</th><th>狀態</th><th>最後檢查</th><th class="ed"></th></tr></thead><tbody id="rows"></tbody></table>
+<div id="empty" hidden>沒有符合的商品</div>
+</main>
+<dialog id="dlg"><form method="dialog" id="f">
+<h2 id="dt">商品</h2>
+<label>名稱<input name="name" required></label>
+<label>分類<input name="category" list="cl"></label><datalist id="cl"><option>服飾<option>重訓器材<option>補給品<option>其他</datalist>
+<label>店家<input name="store"></label>
+<label>連結<input name="url"></label>
+<label>基準價<input name="baseline" type="number" min="0"></label>
+<label>目前價<input name="current" type="number" min="0"></label>
+<label>庫存<select name="stock"><option>有貨<option>低庫存<option>缺貨</select></label>
+<label>狀態<select name="status"><option>無變化<option>降價<option>補貨<option>缺貨</select></label>
+<label>備註<input name="note"></label>
+<label class="chk"><input name="purchased" type="checkbox"> 已購買</label>
+<div class="act"><button value="ok">儲存</button><button value="cancel" formnovalidate>取消</button></div>
+</form></dialog>
+<script src="app.js"></script></body></html>

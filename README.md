@@ -15,3 +15,23 @@
 - 助理每天更新並提交 `data/items.json`。
 - 網頁內「編輯模式」可新增、修改、刪除商品，變更存於瀏覽器 localStorage；按「匯出 JSON」下載後，可取代 `data/items.json` 提交。
 - 「重設為倉庫資料」會清除本機變更。
+
+## 資料格式 v2（向下相容，新增欄位）
+
+items.json 每項商品新增：
+
+- `history`: `[{ "date": "YYYY-MM-DD", "price": 數字 }]`，由舊到新；缺少時網頁以基準價補一筆。
+- `lowest`: 歷史最低價（網頁會自動以 history 重算）。
+- `target`: 目標價，數字或 null；目前價 <= 目標價且有貨時，卡片標示「已達目標價」。
+
+`data/log.json`：`{ "log": [ { "date": "YYYY-MM-DD HH:MM", "id": "商品id或null", "name": "名稱", "type": "價格|狀態|新增|刪除|系統", "text": "說明" } ] }`，最新在最前面，「最近變動」面板顯示前 30 筆。
+
+## 每日更新（助理用）
+
+    node scripts/update.mjs <id> <新價格> [庫存] [狀態] [--note 文字] [--dir data]
+
+例：`node scripts/update.mjs bros-te4061-xl 1190 有貨 降價`。會追加 history、寫入 log.json、更新 `updated` 與 `lastChecked`；狀態省略時，降價自動標為「降價」。無需任何套件。
+
+## 功能
+
+分頁（關注、全部、服飾、重訓器材、補給品、其他）、摘要、迷你價格走勢、詳細抽屜（完整歷史與備註）、新增/編輯/刪除、匯出/匯入 JSON（匯出同時下載 items.json 與 log.json）、深色模式跟隨系統。

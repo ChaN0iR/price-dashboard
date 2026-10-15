@@ -1,6 +1,153 @@
 {
  "log": [
   {
+   "date": "2026-10-16 07:30",
+   "id": "asrv-ballistic-weave-25l-duffle",
+   "name": "ASRV 1157. Ballistic-Weave 25L Duffle Bag - Black",
+   "type": "新增",
+   "text": "新增追蹤 NT$6976（獨特精選）"
+  },
+  {
+   "date": "2026-10-16 07:30",
+   "id": "soar-hooded-wooltech-top-navy",
+   "name": "Soar Running Men's Hooded WoolTech Top - Dark Navy",
+   "type": "新增",
+   "text": "新增追蹤 NT$10500（獨特精選）"
+  },
+  {
+   "date": "2026-10-16 07:30",
+   "id": "district-vision-paf-junya-racer-goji",
+   "name": "District Vision x Post Archive Faction Junya Racer - Goji, D+ Copper Mirror",
+   "type": "新增",
+   "text": "新增追蹤 NT$12640（獨特精選）"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "shopee-tuk-xtgrip",
+   "name": "XT-GRIP 快鎖組合式啞鈴零配件（TUK 體育刻）",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$639 → NT$739；最低價 NT$639 → NT$739（蝦皮 TUK）；狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-plate-5kg",
+   "name": "Tixteel XT 六邊型槓片 5KG 4入",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$2530 → NT$2680；最低價 NT$2530 → NT$2680（TUK 官網）；庫存 低庫存 → 有貨"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-plate-2.5kg",
+   "name": "Tixteel XT 六邊型槓片 2.5KG 4入",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$1350 → NT$1450；最低價 NT$1350 → NT$1450（TUK 官網）"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-plate-1kg",
+   "name": "Tixteel XT 六邊型槓片 1KG 8入",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$1000 → NT$1100；最低價 NT$1000 → NT$1100（TUK 官網）；庫存 低庫存 → 有貨"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-53kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 53kg 一對",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$19650 → NT$19800；最低價 NT$19650 → NT$19800（TUK 官網）；庫存 低庫存 → 有貨"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-43kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 43kg 一對",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$15490 → NT$15640；最低價 NT$15490 → NT$15640（TUK 官網）；庫存 低庫存 → 有貨"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-33kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 33kg 一對",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$12810 → NT$12960；最低價 NT$12810 → NT$12960（TUK 官網）；庫存 低庫存 → 有貨"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-23kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 一對",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$8650 → NT$8800；最低價 NT$8650 → NT$8800（TUK 官網）"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-23kgsingle",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 單支",
+   "type": "價格",
+   "text": "蝦皮 TUK 報價 NT$4350 → NT$4500；最低價 NT$4350 → NT$4500（Tixteel 官網）"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "satisfy-oakley-scar",
+   "name": "SATISFY × Oakley Scar 太陽眼鏡",
+   "type": "狀態",
+   "text": "庫存 有貨 → 缺貨；狀態 無變化 → 缺貨"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-plate-5kg",
+   "name": "Tixteel XT 六邊型槓片 5KG 4入",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-plate-2.5kg",
+   "name": "Tixteel XT 六邊型槓片 2.5KG 4入",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-plate-1kg",
+   "name": "Tixteel XT 六邊型槓片 1KG 8入",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-23kgsingle",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 單支",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-53kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 53kg 一對",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-43kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 43kg 一對",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-33kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 33kg 一對",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
+   "date": "2026-10-16 07:29",
+   "id": "tixteel-grip-23kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 一對",
+   "type": "狀態",
+   "text": "狀態 降價 → 無變化"
+  },
+  {
    "date": "2026-10-15 12:37",
    "id": "shopee-tuk-xtgrip",
    "name": "XT-GRIP 快鎖組合式啞鈴零配件（TUK 體育刻）",

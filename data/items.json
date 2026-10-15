@@ -119,24 +119,38 @@
    "id": "tixteel-grip-23kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 23kg 一對",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-23kg/",
    "baseline": 9000,
-   "current": 9000,
+   "current": 8800,
    "stock": "有貨",
-   "status": "無變化",
+   "status": "降價",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-15 07:24",
+   "lastChecked": "2026-10-15 11:40",
    "history": [
     {
      "date": "2026-10-15",
-     "price": 9000
+     "price": 8800
     }
    ],
-   "lowest": 9000,
+   "lowest": 8800,
    "target": null,
    "offers": [
+    {
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-23kg/",
+     "price": 8800,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 11:40",
+     "note": "官網原價 $9,000，現折 2%",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 8800
+      }
+     ]
+    },
     {
      "store": "Tixteel 官網",
      "url": "https://www.tixteel.com",
@@ -151,7 +165,10 @@
       }
      ]
     }
-   ]
+   ],
+   "prevCurrent": 9000,
+   "prevStock": "有貨",
+   "runKey": "2026-10-15 AM"
   },
   {
    "id": "tixteel-grip-33kgpair",
@@ -309,8 +326,8 @@
    "id": "tixteel-plate-1kg",
    "name": "Tixteel XT 六邊型槓片 1KG 8入",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-1kg-plate/",
    "baseline": 1100,
    "current": 1100,
    "stock": "有貨",
@@ -328,11 +345,11 @@
    "target": null,
    "offers": [
     {
-     "store": "Tixteel 官網",
-     "url": "https://www.tixteel.com",
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-1kg-plate/",
      "price": 1100,
      "stock": "有貨",
-     "lastChecked": "2026-10-15 07:24",
+     "lastChecked": "2026-10-15 11:40",
      "note": "",
      "history": [
       {
@@ -361,8 +378,8 @@
    "id": "tixteel-plate-2.5kg",
    "name": "Tixteel XT 六邊型槓片 2.5KG 4入",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-2-5kg-plate/",
    "baseline": 1450,
    "current": 1450,
    "stock": "有貨",
@@ -380,11 +397,11 @@
    "target": null,
    "offers": [
     {
-     "store": "Tixteel 官網",
-     "url": "https://www.tixteel.com",
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-2-5kg-plate/",
      "price": 1450,
      "stock": "有貨",
-     "lastChecked": "2026-10-15 07:24",
+     "lastChecked": "2026-10-15 11:40",
      "note": "",
      "history": [
       {
@@ -413,8 +430,8 @@
    "id": "tixteel-plate-5kg",
    "name": "Tixteel XT 六邊型槓片 5KG 4入",
    "category": "重訓器材",
-   "store": "Tixteel 官網",
-   "url": "https://www.tixteel.com",
+   "store": "TUK 官網",
+   "url": "https://www.tuk.com.tw/product/tixteel-5kg-plate/",
    "baseline": 2680,
    "current": 2680,
    "stock": "有貨",
@@ -432,11 +449,11 @@
    "target": null,
    "offers": [
     {
-     "store": "Tixteel 官網",
-     "url": "https://www.tixteel.com",
+     "store": "TUK 官網",
+     "url": "https://www.tuk.com.tw/product/tixteel-5kg-plate/",
      "price": 2680,
      "stock": "有貨",
-     "lastChecked": "2026-10-15 07:24",
+     "lastChecked": "2026-10-15 11:40",
      "note": "",
      "history": [
       {
@@ -541,35 +558,35 @@
    "id": "buddy-creatine-1kg",
    "name": "BUDDY 巴弟 微粉化一水肌酸 1kg",
    "category": "補給品",
-   "store": "蝦皮 BUDDY",
-   "url": "",
-   "baseline": 499,
-   "current": 499,
+   "store": "PChome 24h",
+   "url": "https://24h.pchome.com.tw/prod/DBBZ17-A900K5L9Q",
+   "baseline": 899,
+   "current": 899,
    "stock": "有貨",
    "status": "無變化",
    "purchased": false,
-   "note": "來源 feebee，未驗證",
-   "lastChecked": "2026-10-15 07:24",
+   "note": "PChome 標價 $899（原價 $1,500），約 NT$899/kg。舊資料 $499 是 500g 的價格，已更正。賣場內文規格寫 500g，但標題與價格為 1KG，下單前請確認。",
+   "lastChecked": "2026-10-15 11:40",
    "history": [
     {
      "date": "2026-10-15",
-     "price": 499
+     "price": 899
     }
    ],
-   "lowest": 499,
+   "lowest": 899,
    "target": null,
    "offers": [
     {
-     "store": "蝦皮 BUDDY",
-     "url": "",
-     "price": 499,
+     "store": "PChome 24h",
+     "url": "https://24h.pchome.com.tw/prod/DBBZ17-A900K5L9Q",
+     "price": 899,
      "stock": "有貨",
-     "lastChecked": "2026-10-15 07:24",
-     "note": "",
+     "lastChecked": "2026-10-15 11:40",
+     "note": "原價 $1,500",
      "history": [
       {
        "date": "2026-10-15",
-       "price": 499
+       "price": 899
       }
      ]
     }

@@ -14,6 +14,7 @@ function norm(i){
  i.baseline=Number(i.baseline)||0;i.current=Number(i.current)||0;
  if(!Array.isArray(i.offers)||!i.offers.length)i.offers=[{store:i.store||'',url:i.url||'',price:i.current,stock:i.stock||'有貨',lastChecked:i.lastChecked||'',note:'',history:[]}];
  i.offers.forEach(function(o){o.price=Number(o.price)||0;o.stock=o.stock||'有貨';o.url=o.url||'';if(!Array.isArray(o.history))o.history=[]});
+ [i.history].concat(i.offers.map(function(o){return o.history})).forEach(function(h){if(!Array.isArray(h))return;var m={};h.forEach(function(x){m[x.date]=x});var k=Object.keys(m).sort();h.length=0;k.forEach(function(d){h.push(m[d])})});
  derive(i);
  if(!Array.isArray(i.history)||!i.history.length)i.history=[{date:(i.lastChecked||today()).slice(0,10),price:i.baseline}];
  var prices=i.history.map(function(h){return h.price}).concat([i.current,i.baseline]).filter(function(p){return p>0});

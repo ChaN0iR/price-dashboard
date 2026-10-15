@@ -1,6 +1,41 @@
 {
  "log": [
   {
+   "date": "2026-10-15 11:40",
+   "id": "buddy-creatine-1kg",
+   "name": "BUDDY 巴弟 微粉化一水肌酸 1kg",
+   "type": "系統",
+   "text": "資料更正：原誤植 1kg=NT$499，改為 PChome 1kg NT$899（原價 1500）"
+  },
+  {
+   "date": "2026-10-15 11:40",
+   "id": "tixteel-plate-5kg",
+   "name": "Tixteel XT 六邊型槓片 5KG 4入",
+   "type": "系統",
+   "text": "資料更正：移除無實際來源的「Tixteel 官網」報價，改為 TUK 官網（已驗證連結與價格）"
+  },
+  {
+   "date": "2026-10-15 11:40",
+   "id": "tixteel-plate-2.5kg",
+   "name": "Tixteel XT 六邊型槓片 2.5KG 4入",
+   "type": "系統",
+   "text": "資料更正：移除無實際來源的「Tixteel 官網」報價，改為 TUK 官網（已驗證連結與價格）"
+  },
+  {
+   "date": "2026-10-15 11:40",
+   "id": "tixteel-plate-1kg",
+   "name": "Tixteel XT 六邊型槓片 1KG 8入",
+   "type": "系統",
+   "text": "資料更正：移除無實際來源的「Tixteel 官網」報價，改為 TUK 官網（已驗證連結與價格）"
+  },
+  {
+   "date": "2026-10-15 11:40",
+   "id": "tixteel-grip-23kgpair",
+   "name": "Tixteel XT-GRIP 啞鈴 23kg 一對",
+   "type": "價格",
+   "text": "新增報價 TUK 官網 NT$8800；最低價 NT$9000 → NT$8800（TUK 官網）"
+  },
+  {
    "date": "2026-10-15 07:24",
    "id": null,
    "name": "儀表板",

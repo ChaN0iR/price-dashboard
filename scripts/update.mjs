@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 用法: node scripts/update.mjs <id> <price> [stock] [status] [--store 店家] [--url 連結] [--dir data] [--note 文字]
+// 用法: node scripts/update.mjs <id> <price> [stock] [status] [--store 店家] [--url 連結] [--dir data] [--note 文字] [--run 輪次key]
 // --store: 更新該商品中指定店家的報價（找不到就新增一筆）；省略時更新第一筆報價。
 import fs from 'node:fs';
 import path from 'node:path';
@@ -46,17 +46,20 @@ if (opt.store) { o = it.offers.find(x => x.store === opt.store); if (!o) { o = {
 else o = it.offers[0];
 const oldOffer = o.price;
 o.history = o.history || [];
-const lh = o.history[o.history.length - 1];
-if (!lh || lh.price !== price) o.history.push({ date, price });
+const put = (h, v) => { const k = h.findIndex(x => x.date === date); if (k >= 0) h[k].price = v; else h.push({ date, price: v }); };  // 每日一點，後寫覆蓋
+put(o.history, price);
 o.price = price; if (stockArg) o.stock = stockArg; if (opt.url) o.url = opt.url; if (opt.note) o.note = opt.note;
 o.lastChecked = ts;
 // 重新計算最便宜報價與衍生欄位
 const c = cheapest();
 it.current = c.price; it.store = c.store; it.url = c.url || ''; it.stock = c.stock;
 it.history = it.history && it.history.length ? it.history : [{ date, price: it.baseline }];
-const last = it.history[it.history.length - 1];
-if (last.price !== it.current) it.history.push({ date, price: it.current });
-it.status = statusArg || (it.pick === 'unique' ? '無變化' : (it.current < old ? '降價' : (oldStock === '缺貨' && it.stock !== '缺貨') ? '補貨' : it.stock === '缺貨' ? '缺貨' : it.status));
+put(it.history, it.current);
+// 狀態只對「本輪」有效：與上一輪的價格/庫存比較（同一輪多次呼叫共用同一個上一輪快照）
+const runKey = opt.run || `${date} ${d.getHours() < 12 ? 'AM' : 'PM'}`;
+if (it.runKey !== runKey) { it.prevCurrent = old; it.prevStock = oldStock; it.runKey = runKey; }
+const pc = it.prevCurrent, ps = it.prevStock;
+it.status = statusArg || (it.pick === 'unique' ? '無變化' : (pc != null && it.current < pc) ? '降價' : (ps === '缺貨' && it.stock !== '缺貨') ? '補貨' : it.stock === '缺貨' ? '缺貨' : '無變化');
 it.lowest = Math.min(it.lowest || Infinity, it.current, it.baseline || Infinity);
 it.lastChecked = ts; data.updated = ts;
 if (opt.note && !opt.store) it.note = opt.note;

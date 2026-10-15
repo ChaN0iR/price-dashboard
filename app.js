@@ -3,17 +3,26 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=n=>n==null||n===""?"-":"NT$"+Number(n).toLocaleString("en-US");
 const now=()=>{const d=new Date(),p=n=>String(n).padStart(2,"0");return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`};
-function save(){localStorage.setItem(KEY,JSON.stringify(items))}
+function save(){localStorage.setItem(KEY,JSON.stringify({base:repo.updated||"",items}))}
 async function load(){
  try{repo=await (await fetch("data/items.json",{cache:"no-store"})).json()}catch(e){}
- const l=localStorage.getItem(KEY);items=l?JSON.parse(l):JSON.parse(JSON.stringify(repo.items||[]));
- $("#meta").textContent="倉庫資料更新："+(repo.updated||"-")+(l?"（本機有未匯出的變更）":"");render()}
+ let l=null,note="";try{l=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+ const fresh=()=>JSON.parse(JSON.stringify(repo.items||[]));
+ if(l&&!Array.isArray(l)&&Array.isArray(l.items)&&(l.base||"")>=(repo.updated||"")){items=l.items;note="（本機有未匯出的變更）"}
+ else{items=fresh();if(l){localStorage.removeItem(KEY);note="（倉庫資料較新，已捨棄舊的本機副本）"}}
+ $("#meta").textContent="倉庫資料更新："+(repo.updated||"-")+note;render()}
 function change(i){const b=+i.baseline,c=+i.current;return b&&c?(c-b)/b*100:null}
+const pct=i=>{const p=change(i);return p==null?0:p};
+const rank=i=>i.purchased?3:(i.stock==="缺貨"||i.status==="缺貨")?2:(i.status==="降價"||i.status==="補貨")?0:1;
+const sorters={best:(a,b)=>rank(a)-rank(b)||pct(a)-pct(b)||(a.name>b.name?1:-1),
+ drop:(a,b)=>pct(a)-pct(b),
+ price:(a,b)=>(+a.current||Infinity)-(+b.current||Infinity),
+ last:(a,b)=>String(b.lastChecked||"").localeCompare(String(a.lastChecked||""))};
 function render(){
  const cats=[...new Set(items.map(i=>i.category).filter(Boolean))],cs=$("#cat"),cv=cs.value;
  cs.innerHTML='<option value="">全部分類</option>'+cats.map(c=>`<option>${esc(c)}</option>`).join("");cs.value=cats.includes(cv)?cv:"";
  const q=$("#q").value.trim().toLowerCase(),st=$("#st").value;
- const list=items.filter(i=>(!cs.value||i.category===cs.value)&&(!st||i.status===st)&&(!q||[i.name,i.store,i.note].join(" ").toLowerCase().includes(q)));
+ const list=items.filter(i=>(!cs.value||i.category===cs.value)&&(!st||i.status===st)&&(!q||[i.name,i.store,i.note].join(" ").toLowerCase().includes(q))).sort(sorters[$("#sort").value]||sorters.best);
  $("#rows").innerHTML=list.map(i=>{const p=change(i);
   const pc=p==null?"-":`<span class="${p<0?"down":p>0?"up":""}">${p>0?"+":""}${p.toFixed(1)}%</span>`;
   return `<tr><td>${i.url?`<a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.name)}</a>`:esc(i.name)}${i.purchased?" （已購買）":""}<small>${esc(i.category)}${i.note?" ・ "+esc(i.note):""}</small></td>
@@ -23,7 +32,7 @@ function render(){
  $("#empty").hidden=list.length>0;
  const n=s=>items.filter(i=>i.status===s).length;
  $("#sum").innerHTML=`<span>共 <b>${items.length}</b> 項</span><span>降價 <b>${n("降價")}</b></span><span>補貨 <b>${n("補貨")}</b></span><span>缺貨 <b>${n("缺貨")}</b></span>`}
-["#q","#cat","#st"].forEach(s=>$(s).addEventListener("input",render));
+["#q","#cat","#st","#sort"].forEach(s=>$(s).addEventListener("input",render));
 $("#edit").onchange=e=>{document.body.classList.toggle("editing",e.target.checked);$("#tools").hidden=!e.target.checked};
 function open(i){editing=i||null;const f=$("#f");$("#dt").textContent=i?"編輯商品":"新增商品";
  for(const el of f.elements){if(!el.name)continue;const v=i?i[el.name]:(el.name=="stock"?"有貨":el.name=="status"?"無變化":"");

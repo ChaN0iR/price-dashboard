@@ -6,8 +6,15 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){retur
 function money(n){return n==null||n===''?'-':'NT$'+Number(n).toLocaleString('en-US')}
 function today(){var d=new Date(),p=function(n){return ('0'+n).slice(-2)};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())}
 function now(){var d=new Date(),p=function(n){return ('0'+n).slice(-2)};return today()+' '+p(d.getHours())+':'+p(d.getMinutes())}
+function derive(i){
+ var ok=i.offers.filter(function(o){return o.price>0}),ins=ok.filter(function(o){return o.stock!=='缺貨'}),pool=ins.length?ins:ok;
+ var c=pool.reduce(function(a,o){return !a||o.price<a.price?o:a},null);i.cheapest=c;
+ if(c){i.current=c.price;i.store=c.store;i.url=c.url||'';i.stock=c.stock||'有貨'}}
 function norm(i){
  i.baseline=Number(i.baseline)||0;i.current=Number(i.current)||0;
+ if(!Array.isArray(i.offers)||!i.offers.length)i.offers=[{store:i.store||'',url:i.url||'',price:i.current,stock:i.stock||'有貨',lastChecked:i.lastChecked||'',note:'',history:[]}];
+ i.offers.forEach(function(o){o.price=Number(o.price)||0;o.stock=o.stock||'有貨';o.url=o.url||'';if(!Array.isArray(o.history))o.history=[]});
+ derive(i);
  if(!Array.isArray(i.history)||!i.history.length)i.history=[{date:(i.lastChecked||today()).slice(0,10),price:i.baseline}];
  var prices=i.history.map(function(h){return h.price}).concat([i.current,i.baseline]).filter(function(p){return p>0});
  i.lowest=Math.min.apply(null,prices.concat(i.lowest>0?[i.lowest]:[]));
@@ -31,13 +38,19 @@ function spark(h){
  var pts=p.map(function(v,k){return (k/(p.length-1)*100).toFixed(1)+','+(28-(v-mn)/r*24).toFixed(1)}).join(' ');
  var last=pts.split(' ').pop().split(',');
  return '<svg class="spark" viewBox="0 0 100 32" preserveAspectRatio="none"><polyline points="'+pts+'" vector-effect="non-scaling-stroke"/><circle cx="'+last[0]+'" cy="'+last[1]+'" r="2"/></svg>'}
+function offerList(i){
+ if(i.offers.length<2&&!/^https?:/.test(i.offers[0].url))return '';
+ return '<ul class="offers">'+i.offers.map(function(o){var u=/^https?:/.test(o.url||'');
+  return '<li class="'+(o===i.cheapest?'best':'')+(o.stock==='缺貨'?' oos':'')+'"><span>'+esc(o.store)+'</span><span>'+(o.price>0?money(o.price):'-')+' <small>'+esc(o.stock)+'</small></span>'
+  +(u?'<a href="'+esc(o.url)+'" target="_blank" rel="noopener" data-link>前往</a>':'<span class="muted">無連結</span>')+'</li>'}).join('')+'</ul>'}
 function card(i){
  var c=pct(i),cs=c<0?'down':c>0?'up':'';
  return '<div class="item'+(hit(i)?' hit':'')+(i.purchased?' done':'')+'" data-id="'+esc(i.id)+'">'
  +'<div class="top"><span class="name">'+esc(i.name)+'</span><span class="tag'+(i.status==='降價'||i.status==='補貨'?' g':'')+'">'+esc(i.status)+'</span></div>'
- +'<div class="muted">'+esc(i.store)+' / '+esc(i.category)+(i.purchased?' / 已購買':'')+'</div>'
+ +'<div class="muted"><span class="badge">'+esc(i.store)+'</span> '+(i.offers.length>1?'共 '+i.offers.length+' 家 / ':'')+esc(i.category)+(i.purchased?' / 已購買':'')+'</div>'
  +'<div><span class="price">'+money(i.current)+'</span> <span class="'+cs+'">'+(c?(c>0?'+':'')+c.toFixed(1)+'%':'')+'</span></div>'
  +spark(i.history)
+ +offerList(i)
  +'<div class="muted">基準 '+money(i.baseline)+' / 最低 '+money(i.lowest)+(i.target!=null?' / 目標 '+money(i.target):'')+'</div>'
  +'<div class="muted">'+esc(i.stock)+(hit(i)?' / 已達目標價':'')+'</div></div>'}
 function sorted(a){
@@ -59,7 +72,7 @@ function render(){
   if(tab==='watch'&&!(isWatch(i)||hit(i)))return false;
   if(tab!=='watch'&&tab!=='all'&&i.category!==tab)return false;
   if(st&&i.status!==st&&!(st==='低庫存'&&i.stock==='低庫存')&&!(st==='缺貨'&&i.stock==='缺貨'))return false;
-  if(q&&(i.name+' '+i.store).toLowerCase().indexOf(q)<0)return false;return true});
+  if(q&&(i.name+' '+i.offers.map(function(o){return o.store}).join(' ')).toLowerCase().indexOf(q)<0)return false;return true});
  var w=it.filter(function(i){return isWatch(i)||hit(i)});
  $('watch').innerHTML=(tab==='all'&&!q&&!st&&w.length)?'<h2>關注清單（降價 / 補貨）</h2><div class="grid">'+sorted(w).map(card).join('')+'</div><h2 style="margin-top:14px">全部商品</h2>':'';
  $('list').innerHTML=f.length?sorted(f).map(card).join(''):'<div class="muted">'+(tab==='watch'?'目前沒有降價或補貨的商品':'沒有符合的商品')+'</div>';
@@ -72,22 +85,40 @@ function drawer(id){
  +'<p><span class="price">'+money(i.current)+'</span> '+esc(i.stock)+' / '+esc(i.status)+'</p>'
  +spark(i.history)+'<p class="muted">基準 '+money(i.baseline)+'；歷史最低 '+money(i.lowest)+'；目標 '+money(i.target)+(hit(i)?'（已達目標）':'')+'<br>最後檢查 '+esc(i.lastChecked||'-')+'</p>'
  +(i.note?'<p>'+esc(i.note)+'</p>':'')
- +'<table><tr><th>日期</th><th>價格</th></tr>'+rows+'</table>'
- +'<div class="row">'+(/^https?:/.test(i.url||'')?'<a href="'+esc(i.url)+'" target="_blank" rel="noopener"><button type="button">前往商品頁</button></a>':'')
- +'<button data-a="edit">編輯</button><button data-a="del">刪除</button><button data-a="close">關閉</button></div>';
+ +'<h2>各店報價</h2>'+i.offers.map(function(o){var u=/^https?:/.test(o.url||'');
+  return '<div class="offer'+(o===i.cheapest?' best':'')+'"><div class="top"><b>'+esc(o.store)+(o===i.cheapest?' <span class="tag g">最低</span>':'')+'</b><span>'+(o.price>0?money(o.price):'-')+' / '+esc(o.stock)+'</span></div>'
+  +'<div class="muted">檢查 '+esc(o.lastChecked||'-')+(o.note?' / '+esc(o.note):'')+'</div>'+(o.history.length?spark(o.history)+'<div class="muted">'+o.history.slice().reverse().slice(0,8).map(function(h){return esc(h.date)+' '+money(h.price)}).join('；')+'</div>':'')
+  +(u?'<a href="'+esc(o.url)+'" target="_blank" rel="noopener"><button type="button">前往此店</button></a>':'<span class="muted">無連結</span>')+'</div>'}).join('')
+ +'<h2 style="margin-top:12px">最低價歷史</h2><table><tr><th>日期</th><th>價格</th></tr>'+rows+'</table>'
+ +'<div class="row">'+'<button data-a="edit">編輯</button><button data-a="del">刪除</button><button data-a="close">關閉</button></div>';
  $('panel').setAttribute('data-id',id);$('drawer').hidden=false}
 var editing=null;
 function openForm(i){
  editing=i||null;var f=$('f');$('ftitle').textContent=i?'編輯商品':'新增商品';
- ['name','category','store','url','baseline','current','target','stock','status','note'].forEach(function(k){f.elements[k].value=i&&i[k]!=null?i[k]:(k==='category'?(CATS.indexOf(tab)>=0?tab:'其他'):k==='stock'?'有貨':k==='status'?'無變化':'')});
- f.elements.purchased.checked=!!(i&&i.purchased);$('form').showModal()}
+ ['name','category','baseline','target','status','note'].forEach(function(k){f.elements[k].value=i&&i[k]!=null?i[k]:(k==='category'?(CATS.indexOf(tab)>=0?tab:'其他'):k==='stock'?'有貨':k==='status'?'無變化':'')});
+ f.elements.purchased.checked=!!(i&&i.purchased);
+ drafts=(i?i.offers:[{store:'',url:'',price:'',stock:'有貨'}]).map(function(o){return {store:o.store,url:o.url,price:o.price,stock:o.stock,lastChecked:o.lastChecked,note:o.note,history:o.history}});
+ drawOffers();$('form').showModal()}
+var drafts=[];
+function drawOffers(){
+ $('offered').innerHTML=drafts.map(function(o,k){return '<div class="oe" data-k="'+k+'"><input data-f="store" placeholder="店家" value="'+esc(o.store)+'"><input data-f="price" type="number" min="0" placeholder="價格" value="'+esc(o.price)+'">'
+  +'<select data-f="stock">'+['有貨','低庫存','缺貨'].map(function(s){return '<option'+(o.stock===s?' selected':'')+'>'+s+'</option>'}).join('')+'</select>'
+  +'<button type="button" data-rm="'+k+'">移除</button><input data-f="url" type="url" placeholder="連結 https://" value="'+esc(o.url)+'" class="w"></div>'}).join('')}
+document.addEventListener('input',function(e){var r=e.target.closest('.oe');if(r&&e.target.getAttribute('data-f'))drafts[+r.getAttribute('data-k')][e.target.getAttribute('data-f')]=e.target.value});
+document.addEventListener('click',function(e){var rm=e.target.getAttribute&&e.target.getAttribute('data-rm');if(rm!=null){drafts.splice(+rm,1);drawOffers()}});
+$('addoffer').onclick=function(){drafts.push({store:'',url:'',price:'',stock:'有貨'});drawOffers()};
 function submitForm(){
  var f=$('f');if(!f.reportValidity())return;var v=function(k){return f.elements[k].value};
- var cur=Number(v('current')),o=editing;
- var n=o||{id:'u'+Date.now().toString(36),history:[{date:today(),price:cur}],lowest:cur};
- var old=o?o.current:null;
- n.name=v('name').trim();n.category=v('category');n.store=v('store');n.url=v('url');n.baseline=Number(v('baseline'));n.current=cur;
- n.target=v('target')===''?null:Number(v('target'));n.stock=v('stock');n.status=v('status');n.note=v('note');n.purchased=f.elements.purchased.checked;n.lastChecked=now();
+ var o=editing,t=today(),offs=drafts.filter(function(x){return String(x.store).trim()||Number(x.price)>0});
+ if(!offs.length){alert('至少需要一筆報價');return}
+ offs=offs.map(function(x){var prev=o?o.offers.filter(function(p){return p.store===x.store})[0]:null,pr=Number(x.price)||0,h=(x.history||[]).slice();
+  if(pr>0&&(!h.length||h[h.length-1].price!==pr))h.push({date:t,price:pr});
+  return {store:String(x.store).trim(),url:x.url||'',price:pr,stock:x.stock||'有貨',lastChecked:prev&&prev.price===pr&&prev.stock===x.stock?x.lastChecked:now(),note:x.note||'',history:h}});
+ var n=o||{id:'u'+Date.now().toString(36),history:[]};
+ var old=o?o.current:null;n.offers=offs;derive(n);var cur=n.current;
+ if(!o)n.history=[{date:t,price:cur}];
+ n.name=v('name').trim();n.category=v('category');n.baseline=Number(v('baseline'));
+ n.target=v('target')===''?null:Number(v('target'));n.status=v('status');n.note=v('note');n.purchased=f.elements.purchased.checked;n.lastChecked=now();
  if(!o){S.items.push(n);logAdd(n,'新增','新增追蹤，目前 '+money(cur))}
  else if(old!==cur){n.history.push({date:today(),price:cur});logAdd(n,'價格',money(old)+' → '+money(cur))}
  else logAdd(n,'編輯','更新商品資料');
@@ -102,6 +133,7 @@ document.addEventListener('click',function(e){
   if(k==='del'&&confirm('刪除「'+it.name+'」？')){S.items=S.items.filter(function(x){return x!==it});logAdd(it,'刪除','已刪除');save();$('drawer').hidden=true;render()}
   return}
  if(e.target===$('drawer')){$('drawer').hidden=true;return}
+ if(e.target.closest('[data-link]'))return;
  var c=e.target.closest('.item');if(c)drawer(c.getAttribute('data-id'))});
 ['q','status','sort'].forEach(function(i){$(i).addEventListener('input',render)});
 $('add').onclick=function(){openForm(null)};

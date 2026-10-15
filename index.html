@@ -21,11 +21,9 @@
 <h3 id="ftitle">商品</h3>
 <label>名稱<input name="name" required></label>
 <label>分類<select name="category"><option>服飾</option><option>重訓器材</option><option>補給品</option><option>其他</option></select></label>
-<label>店家<input name="store"></label><label>連結<input name="url" type="url"></label>
 <label>基準價<input name="baseline" type="number" min="0" required></label>
-<label>目前價<input name="current" type="number" min="0" required></label>
 <label>目標價<input name="target" type="number" min="0"></label>
-<label>庫存<select name="stock"><option>有貨</option><option>低庫存</option><option>缺貨</option></select></label>
+<fieldset><legend>各店報價（卡片顯示最便宜且有貨者）</legend><div id="offered"></div><button type="button" id="addoffer">新增報價</button></fieldset>
 <label>狀態<select name="status"><option>無變化</option><option>降價</option><option>補貨</option><option>缺貨</option></select></label>
 <label class="chk"><input name="purchased" type="checkbox">已購買</label>
 <label>備註<textarea name="note" rows="2"></textarea></label>

@@ -21,7 +21,23 @@
     }
    ],
    "lowest": 2380,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "MR.HSIA",
+     "url": "https://www.mrhsia.com.tw/products/busan-mens-long-wool-coat",
+     "price": 2380,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 2380
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "bros-te4061-xl",
@@ -43,7 +59,23 @@
     }
    ],
    "lowest": 1380,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "BROS",
+     "url": "https://www.bros.com.tw/products/te4061",
+     "price": 1380,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 1380
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "bros-te0831-2xl",
@@ -65,7 +97,23 @@
     }
    ],
    "lowest": 880,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "BROS",
+     "url": "https://www.bros.com.tw/products/te0831",
+     "price": 880,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 880
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-grip-23kgpair",
@@ -87,7 +135,23 @@
     }
    ],
    "lowest": 9000,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 9000,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 9000
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-grip-33kgpair",
@@ -109,7 +173,23 @@
     }
    ],
    "lowest": 12960,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 12960,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 12960
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-grip-43kgpair",
@@ -131,7 +211,23 @@
     }
    ],
    "lowest": 15640,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 15640,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 15640
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-grip-53kgpair",
@@ -153,7 +249,23 @@
     }
    ],
    "lowest": 19800,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 19800,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 19800
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-grip-23kgsingle",
@@ -175,7 +287,23 @@
     }
    ],
    "lowest": 4500,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 4500,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 4500
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-plate-1kg",
@@ -197,7 +325,37 @@
     }
    ],
    "lowest": 1100,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 1100,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 1100
+      }
+     ]
+    },
+    {
+     "store": "蝦皮 TUK",
+     "url": "https://shopee.tw/product/191302329/28711429780",
+     "price": 1100,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "TUK 商品頁規格價，與官網同價（2026-10-15 查）",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 1100
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-plate-2.5kg",
@@ -219,7 +377,37 @@
     }
    ],
    "lowest": 1450,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 1450,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 1450
+      }
+     ]
+    },
+    {
+     "store": "蝦皮 TUK",
+     "url": "https://shopee.tw/product/191302329/28711429780",
+     "price": 1450,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "TUK 商品頁規格價，與官網同價（2026-10-15 查）",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 1450
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "tixteel-plate-5kg",
@@ -241,7 +429,37 @@
     }
    ],
    "lowest": 2680,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "Tixteel 官網",
+     "url": "https://www.tixteel.com",
+     "price": 2680,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 2680
+      }
+     ]
+    },
+    {
+     "store": "蝦皮 TUK",
+     "url": "https://shopee.tw/product/191302329/28711429780",
+     "price": 2680,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "TUK 商品頁規格價，與官網同價（2026-10-15 查）",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 2680
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "shopee-tuk-xtgrip",
@@ -263,7 +481,23 @@
     }
    ],
    "lowest": 739,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "蝦皮 TUK",
+     "url": "https://shopee.tw/product/191302329/28711429780",
+     "price": 739,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 739
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "myprotein-whey-2.5kg",
@@ -285,7 +519,23 @@
     }
    ],
    "lowest": 2159,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "蝦皮 Myprotein",
+     "url": "",
+     "price": 2159,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 2159
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "buddy-creatine-1kg",
@@ -307,7 +557,23 @@
     }
    ],
    "lowest": 499,
-   "target": null
+   "target": null,
+   "offers": [
+    {
+     "store": "蝦皮 BUDDY",
+     "url": "",
+     "price": 499,
+     "stock": "有貨",
+     "lastChecked": "2026-10-15 07:24",
+     "note": "",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 499
+      }
+     ]
+    }
+   ]
   }
  ]
 }

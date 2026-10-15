@@ -187,6 +187,22 @@
        "price": 8650
       }
      ]
+    },
+    {
+     "store": "FB Marketplace (二手)",
+     "url": "https://www.facebook.com/marketplace/item/1946035942946702/",
+     "price": 7200,
+     "oldPrice": 7800,
+     "stock": "有貨",
+     "used": true,
+     "lastChecked": "2026-10-15 19:10",
+     "note": "近全新、台北明德站自取、賣家 Wilson Wang、未提及 MAX、2026-10-15 確認仍在",
+     "history": [
+      {
+       "date": "2026-10-15",
+       "price": 7200
+      }
+     ]
     }
    ],
    "prevCurrent": 8800,

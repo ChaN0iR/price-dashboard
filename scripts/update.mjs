@@ -39,7 +39,7 @@ const price = Number(priceArg);
 if (!Array.isArray(it.offers) || !it.offers.length)
   it.offers = [{ store: it.store, url: it.url || '', price: it.current, stock: it.stock, lastChecked: it.lastChecked, note: '', history: (it.history || []).map(h => ({ ...h })) }];
 const cheapest = () => {
-  const ok = it.offers.filter(o => o.price > 0);
+  const ok = it.offers.filter(o => o.price > 0 && !o.used); // 二手報價不參與最低價
   const ins = ok.filter(o => o.stock !== '缺貨');
   const pool = ins.length ? ins : ok;
   return pool.reduce((a, o) => (!a || o.price < a.price ? o : a), null);

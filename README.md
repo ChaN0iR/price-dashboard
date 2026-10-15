@@ -40,6 +40,7 @@ items.json 每項商品新增：
                   "lastChecked": "YYYY-MM-DD HH:MM", "note": "備註", "history": [ { "date": "YYYY-MM-DD", "price": 數字 } ] } ]
 
 - 舊欄位 `store`、`url`、`current`、`stock` 由「最便宜且非缺貨」的報價推導（全部缺貨時取最便宜者）；價格相同時取陣列較前者。`history` 為該商品最低價的歷史，各店歷史在 `offers[].history`。
+- `offers[].used: true` 表示二手報價：不參與最低價／標題價計算，網頁在卡片獨立「二手」區顯示（連結、價格、備註）。
 - 沒有 `offers` 的舊資料，網頁與腳本會自動由舊欄位建立單一報價。
 - 沒有連結的報價（例如蝦皮 Myprotein、BUDDY）`url` 留空，卡片顯示「無連結」。
 

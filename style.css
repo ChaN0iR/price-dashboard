@@ -48,3 +48,5 @@ dialog .oe input,dialog .oe select{width:auto;min-width:0}dialog .oe .w{width:10
 nav button.dropt{color:var(--drop);font-weight:600}
 .item.trash{filter:grayscale(1) brightness(.75);opacity:.75;cursor:default}
 .fb button.danger,button.danger{color:var(--bad);border-color:var(--bad)}
+
+.offers.used{margin-top:4px;border-top:1px dashed var(--line,#8884)}.offers.used li.usedh{display:block;font-weight:600;opacity:.7}.offers.used small{font-weight:400}

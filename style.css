@@ -40,7 +40,7 @@ dialog .oe input,dialog .oe select{width:auto;min-width:0}dialog .oe .w{width:10
 .reason{font-size:13px;color:var(--mu);border-left:2px solid var(--bd);padding-left:8px}
 #fblink{font-size:14px;color:var(--ac);align-self:center}
 
-.tile{text-align:left;cursor:pointer;display:block;width:100%}
+.tile{font:inherit;color:inherit;text-align:left;cursor:pointer;display:block;width:100%}
 .tile.drop{background:var(--drop);border-color:var(--drop);color:#fff}.tile.drop .muted{color:#fff;opacity:.9}.tile.drop b{font-size:26px}
 .item.drop{border-left:6px solid var(--drop);background:var(--dropbg)}.item.drop .price{color:var(--drop)}
 .tag.drop{background:var(--drop);border-color:var(--drop);color:#fff;font-weight:700}

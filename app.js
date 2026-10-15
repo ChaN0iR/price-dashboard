@@ -42,7 +42,7 @@ function load(){
   S.items=a[0].items;S.updated=a[0].updated;S.log=a[1].log||[];S.local=false;
   var l=null;try{l=JSON.parse(localStorage.getItem(KEY))}catch(e){}
   if(l&&l.items){S.items=l.items;S.log=l.log||S.log;S.local=true}
-  S.items.forEach(norm);render()}).catch(function(e){$('notice').textContent='載入失敗：'+e.message})}
+  S.items.forEach(norm);var h0=hashTab();if(h0){goTab(h0,h0==='drops')}else render()}).catch(function(e){$('notice').textContent='載入失敗：'+e.message})}
 function save(){S.local=true;try{localStorage.setItem(KEY,JSON.stringify({items:S.items,log:S.log}))}catch(e){}}
 function pct(i){return i.baseline?(i.current-i.baseline)/i.baseline*100:0}
 function dis(i){return vote(i.id)==='dislike'}
@@ -137,6 +137,12 @@ function drawOffers(){
   +'<select data-f="stock">'+['有貨','低庫存','缺貨'].map(function(s){return '<option'+(o.stock===s?' selected':'')+'>'+s+'</option>'}).join('')+'</select>'
   +'<button type="button" data-rm="'+k+'">移除</button><input data-f="url" type="url" placeholder="連結 https://" value="'+esc(o.url)+'" class="w"></div>'}).join('')}
 document.addEventListener('input',function(e){var r=e.target.closest('.oe');if(r&&e.target.getAttribute('data-f'))drafts[+r.getAttribute('data-k')][e.target.getAttribute('data-f')]=e.target.value});
+function goTab(name,scroll){tab=name;$('q').value='';$('status').value='';
+ try{if(location.hash!=='#'+name)history.replaceState(null,'','#'+name)}catch(e){}
+ render();
+ if(scroll)requestAnimationFrame(function(){var el=$('watch');if(!el||!el.firstChild)el=$('list');if(!el||!el.firstChild)el=$('tabs');el.scrollIntoView({behavior:'smooth',block:'start'})})}
+function hashTab(){var h=(location.hash||'').replace('#','');var ok=['watch','drops','unique','all','trash'].concat(CATS);if(h&&ok.indexOf(h)>=0)return h;return null}
+window.addEventListener('hashchange',function(){var h=hashTab();if(h&&h!==tab)goTab(h,h==='drops')});
 document.addEventListener('click',function(e){var rm=e.target.getAttribute&&e.target.getAttribute('data-rm');if(rm!=null){drafts.splice(+rm,1);drawOffers()}});
 $('addoffer').onclick=function(){drafts.push({store:'',url:'',price:'',stock:'有貨'});drawOffers()};
 function submitForm(){
@@ -158,13 +164,13 @@ function submitForm(){
 function download(name,obj){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(obj,null,1)],{type:'application/json'}));a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(a.href)},1000)}
 document.addEventListener('click',function(e){
  var v=e.target.closest('[data-v]');if(v){e.stopPropagation();setVote(v.getAttribute('data-id'),v.getAttribute('data-v'));if(!$('drawer').hidden)drawer(v.getAttribute('data-id'));return}
- var go=e.target.closest('[data-go]');if(go){tab=go.getAttribute('data-go');$('q').value='';$('status').value='';render();var sc=$('watch');sc.scrollIntoView({behavior:'smooth',block:'start'});return}
+ var go=e.target.closest('[data-go]');if(go){e.preventDefault();goTab(go.getAttribute('data-go'),true);return}
  var rb=e.target.closest('[data-r]');if(rb){e.stopPropagation();var k=rb.getAttribute('data-r'),rid=rb.getAttribute('data-id');
   if(k==='restore')setVote(rid,'dislike');
   else if(k==='purge'){var p=S.items.filter(function(x){return x.id===rid})[0];if(p&&confirm('永久刪除「'+p.name+'」？此動作無法復原。')){S.items=S.items.filter(function(x){return x!==p});logAdd(p,'刪除','已永久刪除（待刪除）');save();render()}}
   else if(k==='purgeall'){var ds=S.items.filter(dis);if(ds.length&&confirm('永久刪除待刪除中的 '+ds.length+' 項商品？此動作無法復原。')){ds.forEach(function(p){logAdd(p,'刪除','已永久刪除（待刪除）')});S.items=S.items.filter(function(x){return !dis(x)});save();render()}}
   return}
- var t=e.target.closest('[data-t]');if(t){tab=t.getAttribute('data-t');render();return}
+ var t=e.target.closest('[data-t]');if(t){goTab(t.getAttribute('data-t'),false);return}
  var a=e.target.closest('[data-a]');
  if(a){var id=$('panel').getAttribute('data-id'),it=S.items.filter(function(x){return x.id===id})[0],k=a.getAttribute('data-a');
   if(k==='close')$('drawer').hidden=true;

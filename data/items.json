@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16 07:30",
+ "updated": "2026-10-16 12:27",
  "items": [
   {
    "id": "mrhsia-busan-m",
@@ -13,7 +13,7 @@
    "status": "無變化",
    "purchased": true,
    "note": "原價 3180；M/L 各剩 5 件；已購買",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -32,8 +32,8 @@
      "url": "https://www.mrhsia.com.tw/products/busan-mens-long-wool-coat",
      "price": 2380,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "原價 3180；M/L 各剩 5 件；已購買",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "原價 3180；M/L 各剩 5 件（同早上）；已購買",
      "history": [
       {
        "date": "2026-10-15",
@@ -48,7 +48,7 @@
    ],
    "prevCurrent": 2380,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "bros-te4061-xl",
@@ -62,7 +62,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "原價 1680；unlimited 有貨",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -81,7 +81,7 @@
      "url": "https://www.bros.com.tw/products/te4061",
      "price": 1380,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "原價 1680；unlimited 有貨",
      "history": [
       {
@@ -97,7 +97,7 @@
    ],
    "prevCurrent": 1380,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "bros-te0831-2xl",
@@ -111,7 +111,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "原價 1180；黑/軍綠/藏青；unlimited 有貨",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -130,7 +130,7 @@
      "url": "https://www.bros.com.tw/products/te0831",
      "price": 880,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "原價 1180；黑/軍綠/藏青；unlimited 有貨",
      "history": [
       {
@@ -146,21 +146,21 @@
    ],
    "prevCurrent": 880,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-grip-23kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 23kg 一對",
    "category": "重訓器材",
-   "store": "TUK 官網",
-   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-23kg/",
+   "store": "蝦皮 TUK",
+   "url": "https://shopee.tw/product/191302329/15197894141",
    "baseline": 9000,
-   "current": 8800,
+   "current": 7920,
    "stock": "有貨",
-   "status": "無變化",
+   "status": "降價",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -168,10 +168,10 @@
     },
     {
      "date": "2026-10-16",
-     "price": 8800
+     "price": 7920
     }
    ],
-   "lowest": 8650,
+   "lowest": 7920,
    "target": null,
    "offers": [
     {
@@ -179,7 +179,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-23kg/",
      "price": 8800,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "官網原價 $9,000，現折約 2%",
      "history": [
       {
@@ -197,7 +197,7 @@
      "url": "https://www.tixteel.com/product/xt-grip-a-pair-of-23kg/",
      "price": 9000,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "",
      "history": [
       {
@@ -213,10 +213,10 @@
     {
      "store": "蝦皮 TUK",
      "url": "https://shopee.tw/product/191302329/15197894141",
-     "price": 8800,
+     "price": 7920,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價8800；實付7920（套蝦皮VIP綠途未來9折券(低消5000,折抵上限2000,約10/17到期,已用50%,適用範圍未驗證)後計算值;大型件免運;10/17起店家9折券(低消2500,上限350)可再疊）；庫存30",
      "history": [
       {
        "date": "2026-10-15",
@@ -224,7 +224,7 @@
       },
       {
        "date": "2026-10-16",
-       "price": 8800
+       "price": 7920
       }
      ]
     },
@@ -245,23 +245,23 @@
      ]
     }
    ],
-   "prevCurrent": 8650,
+   "prevCurrent": 8800,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-grip-33kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 33kg 一對",
    "category": "重訓器材",
-   "store": "TUK 官網",
-   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-33kg/",
+   "store": "蝦皮 TUK",
+   "url": "https://shopee.tw/product/191302329/15197894141",
    "baseline": 12960,
-   "current": 12960,
-   "stock": "有貨",
-   "status": "無變化",
+   "current": 11664,
+   "stock": "低庫存",
+   "status": "降價",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -269,10 +269,10 @@
     },
     {
      "date": "2026-10-16",
-     "price": 12960
+     "price": 11664
     }
    ],
-   "lowest": 12810,
+   "lowest": 11664,
    "target": null,
    "offers": [
     {
@@ -280,7 +280,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-33kg/",
      "price": 12960,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "商品頁價格",
      "history": [
       {
@@ -298,7 +298,7 @@
      "url": "https://www.tixteel.com/product/xt-grip-a-pair-of-33kg/",
      "price": 12960,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "",
      "history": [
       {
@@ -314,10 +314,10 @@
     {
      "store": "蝦皮 TUK",
      "url": "https://shopee.tw/product/191302329/15197894141",
-     "price": 12960,
-     "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "price": 11664,
+     "stock": "低庫存",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價12960；實付11664（套蝦皮VIP綠途未來9折券(低消5000,折抵上限2000,約10/17到期,已用50%,適用範圍未驗證)後計算值;大型件免運;10/17起店家9折券(低消2500,上限350)可再疊）；剩5件",
      "history": [
       {
        "date": "2026-10-15",
@@ -325,28 +325,28 @@
       },
       {
        "date": "2026-10-16",
-       "price": 12960
+       "price": 11664
       }
      ]
     }
    ],
-   "prevCurrent": 12810,
-   "prevStock": "低庫存",
-   "runKey": "2026-10-16 AM"
+   "prevCurrent": 12960,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-grip-43kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 43kg 一對",
    "category": "重訓器材",
-   "store": "TUK 官網",
-   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-43kg/",
+   "store": "蝦皮 TUK",
+   "url": "https://shopee.tw/product/191302329/15197894141",
    "baseline": 15640,
-   "current": 15640,
-   "stock": "有貨",
-   "status": "無變化",
+   "current": 14076,
+   "stock": "低庫存",
+   "status": "降價",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -354,10 +354,10 @@
     },
     {
      "date": "2026-10-16",
-     "price": 15640
+     "price": 14076
     }
    ],
-   "lowest": 15490,
+   "lowest": 14076,
    "target": null,
    "offers": [
     {
@@ -365,7 +365,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-43kg/",
      "price": 15640,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "商品頁價格",
      "history": [
       {
@@ -383,7 +383,7 @@
      "url": "https://www.tixteel.com/product/xt-grip-a-pair-of-43kg/",
      "price": 15640,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "",
      "history": [
       {
@@ -399,10 +399,10 @@
     {
      "store": "蝦皮 TUK",
      "url": "https://shopee.tw/product/191302329/15197894141",
-     "price": 15640,
-     "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "price": 14076,
+     "stock": "低庫存",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價15640；實付14076（套蝦皮VIP綠途未來9折券(低消5000,折抵上限2000,約10/17到期,已用50%,適用範圍未驗證)後計算值;大型件免運;10/17起店家9折券(低消2500,上限350)可再疊）；剩4件",
      "history": [
       {
        "date": "2026-10-15",
@@ -410,28 +410,28 @@
       },
       {
        "date": "2026-10-16",
-       "price": 15640
+       "price": 14076
       }
      ]
     }
    ],
-   "prevCurrent": 15490,
-   "prevStock": "低庫存",
-   "runKey": "2026-10-16 AM"
+   "prevCurrent": 15640,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-grip-53kgpair",
    "name": "Tixteel XT-GRIP 啞鈴 53kg 一對",
    "category": "重訓器材",
-   "store": "TUK 官網",
-   "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-53kg/",
+   "store": "蝦皮 TUK",
+   "url": "https://shopee.tw/product/191302329/15197894141",
    "baseline": 19800,
-   "current": 19800,
-   "stock": "有貨",
-   "status": "無變化",
+   "current": 17820,
+   "stock": "低庫存",
+   "status": "降價",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -439,10 +439,10 @@
     },
     {
      "date": "2026-10-16",
-     "price": 19800
+     "price": 17820
     }
    ],
-   "lowest": 19650,
+   "lowest": 17820,
    "target": null,
    "offers": [
     {
@@ -450,7 +450,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-xt-grip-a-pair-of-53kg/",
      "price": 19800,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "商品頁價格",
      "history": [
       {
@@ -468,7 +468,7 @@
      "url": "https://www.tixteel.com/product/xt-grip-a-pair-of-53kg/",
      "price": 19800,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "",
      "history": [
       {
@@ -484,10 +484,10 @@
     {
      "store": "蝦皮 TUK",
      "url": "https://shopee.tw/product/191302329/15197894141",
-     "price": 19800,
-     "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "price": 17820,
+     "stock": "低庫存",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價19800；實付17820（套蝦皮VIP綠途未來9折券(低消5000,折抵上限2000,約10/17到期,已用50%,適用範圍未驗證)後計算值;大型件免運;10/17起店家9折券(低消2500,上限350)可再疊）；剩4件",
      "history": [
       {
        "date": "2026-10-15",
@@ -495,14 +495,14 @@
       },
       {
        "date": "2026-10-16",
-       "price": 19800
+       "price": 17820
       }
      ]
     }
    ],
-   "prevCurrent": 19650,
-   "prevStock": "低庫存",
-   "runKey": "2026-10-16 AM"
+   "prevCurrent": 19800,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-grip-23kgsingle",
@@ -516,7 +516,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -535,7 +535,7 @@
      "url": "https://www.tixteel.com/product/xt-grip-23kg/",
      "price": 4500,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "",
      "history": [
       {
@@ -553,8 +553,8 @@
      "url": "https://shopee.tw/product/191302329/15197894141",
      "price": 4500,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價4500；未達目前可用券低消5000，實付4500（免運）；剩7件；10/17起店家9折券可折350",
      "history": [
       {
        "date": "2026-10-15",
@@ -567,9 +567,9 @@
      ]
     }
    ],
-   "prevCurrent": 4350,
+   "prevCurrent": 4500,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-plate-1kg",
@@ -583,7 +583,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -602,7 +602,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-1kg-plate/",
      "price": 1100,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "尚有庫存；Tixteel 官網同價 1100",
      "history": [
       {
@@ -619,9 +619,9 @@
      "store": "蝦皮 TUK",
      "url": "https://shopee.tw/product/191302329/28711429780",
      "price": 1100,
-     "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "stock": "低庫存",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價1100（啞鈴頁加購價1050）；未達券低消，實付1100；剩4件",
      "history": [
       {
        "date": "2026-10-15",
@@ -634,9 +634,9 @@
      ]
     }
    ],
-   "prevCurrent": 1000,
-   "prevStock": "低庫存",
-   "runKey": "2026-10-16 AM"
+   "prevCurrent": 1100,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-plate-2.5kg",
@@ -650,7 +650,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -669,7 +669,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-2-5kg-plate/",
      "price": 1450,
      "stock": "低庫存",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "庫存只剩 5（10/15 起即如此）；Tixteel 官網同價 1450",
      "history": [
       {
@@ -687,8 +687,8 @@
      "url": "https://shopee.tw/product/191302329/28711429780",
      "price": 1450,
      "stock": "低庫存",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價1450；未達券低消，實付1450；剩3件",
      "history": [
       {
        "date": "2026-10-15",
@@ -701,9 +701,9 @@
      ]
     }
    ],
-   "prevCurrent": 1350,
+   "prevCurrent": 1450,
    "prevStock": "低庫存",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "tixteel-plate-5kg",
@@ -717,7 +717,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -736,7 +736,7 @@
      "url": "https://www.tuk.com.tw/product/tixteel-5kg-plate/",
      "price": 2680,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "尚有庫存；Tixteel 官網同價 2680",
      "history": [
       {
@@ -753,9 +753,9 @@
      "store": "蝦皮 TUK",
      "url": "https://shopee.tw/product/191302329/28711429780",
      "price": 2680,
-     "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "標價（計算：10/15晚間券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "stock": "低庫存",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "標價2680；未達目前可用券低消，實付2680；剩3件；10/17起店家9折券可折268",
      "history": [
       {
        "date": "2026-10-15",
@@ -768,9 +768,9 @@
      ]
     }
    ],
-   "prevCurrent": 2530,
-   "prevStock": "低庫存",
-   "runKey": "2026-10-16 AM"
+   "prevCurrent": 2680,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "shopee-tuk-xtgrip",
@@ -784,7 +784,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "價格區間 739–2680；槓片與官網同價；庫存 46",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:27",
    "history": [
     {
      "date": "2026-10-15",
@@ -803,8 +803,8 @@
      "url": "https://shopee.tw/product/191302329/28711429780",
      "price": 739,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "襯套標價739（計算：10/15券已過期；今日蝦皮驗證碼擋住未重讀）",
+     "lastChecked": "2026-10-16 12:27",
+     "note": "襯套12入標價739；鎖頭324/344/353=1240/1280/1480；剩23件",
      "history": [
       {
        "date": "2026-10-15",
@@ -817,9 +817,9 @@
      ]
     }
    ],
-   "prevCurrent": 639,
+   "prevCurrent": 739,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "myprotein-whey-2.5kg",
@@ -871,7 +871,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "PChome 標價 $899（原價 $1,500），約 NT$899/kg。舊資料 $499 是 500g 的價格，已更正。賣場內文規格寫 500g，但標題與價格為 1KG，下單前請確認。",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -890,7 +890,7 @@
      "url": "https://24h.pchome.com.tw/prod/DBBZ17-A900K5L9Q",
      "price": 899,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "原價 $1,500；庫存 Qty=20",
      "history": [
       {
@@ -906,7 +906,7 @@
    ],
    "prevCurrent": 899,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "satisfy-oakley-scar",
@@ -920,7 +920,7 @@
    "status": "缺貨",
    "purchased": false,
    "note": "官網標價 US$198；匯率約 32 折算",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -939,8 +939,8 @@
      "url": "https://www.satisfyrunning.com/products/satisfy-oakley-scar-falcon",
      "price": 6336,
      "stock": "缺貨",
-     "lastChecked": "2026-10-16 07:29",
-     "note": "官網標價 US$198；匯率約 32 折算；10/16 已售完（Falcon/Silver 皆無貨）",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 US$198；匯率約 32 折算；10/16 起售完（Falcon/Silver 皆無貨，午間仍未補貨）",
      "history": [
       {
        "date": "2026-10-15",
@@ -956,8 +956,8 @@
    "pick": "unique",
    "reason": "Satisfy×Oakley 聯名運動太陽眼鏡，官網 US$198（約 NT$6,336），辨識度高、跑者圈少見",
    "prevCurrent": 6336,
-   "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "prevStock": "缺貨",
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "ciele-vlv-halfzip-oak",
@@ -971,7 +971,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "官網標價 US$180；匯率約 32 折算；Oak 色 XS–XL 有貨",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -990,7 +990,7 @@
      "url": "https://www.cieleathletics.com/products/m-vlvhalfzip-oak",
      "price": 5760,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "官網標價 US$180；匯率約 32 折算；Oak 色 XS–XL 有貨",
      "history": [
       {
@@ -1008,7 +1008,7 @@
    "reason": "加拿大跑者品牌招牌半拉鍊刷毛，官網 US$180（約 NT$5,760），剪裁與配色獨特、XS–XL 有貨",
    "prevCurrent": 5760,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "satisfy-techsilk-vest",
@@ -1022,7 +1022,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "官網標價 US$260；黑色有貨；匯率約 32 折算",
-   "lastChecked": "2026-10-16 07:29",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-15",
@@ -1041,7 +1041,7 @@
      "url": "https://www.satisfyrunning.com/products/techsilk-drift-cordura-5l-hydration-vest-black",
      "price": 8320,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:29",
+     "lastChecked": "2026-10-16 12:25",
      "note": "官網標價 US$260；S-M / L-XL 有貨；匯率約 32 折算",
      "history": [
       {
@@ -1059,7 +1059,7 @@
    "reason": "Satisfy 越野水袋背心，Cordura 耐用料，官網 US$260（約 NT$8,320），小眾精品跑具",
    "prevCurrent": 8320,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "district-vision-paf-junya-racer-goji",
@@ -1073,7 +1073,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:30",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-16",
@@ -1088,8 +1088,8 @@
      "url": "https://districtvision.com/products/dv-paf-junya-racer-goji-d-copper-mirror",
      "price": 12640,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:30",
-     "note": "",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 US$395；匯率約 32 折算；Goji 有貨",
      "history": [
       {
        "date": "2026-10-16",
@@ -1102,7 +1102,7 @@
    "reason": "日本製跑步太陽眼鏡，和韓國品牌 PAF 聯名，鏡片是手工雕塑的，設計感很強；同系列其他配色都已售完，這款還有貨。原價 USD 395，以約 32 換算成台幣。",
    "prevCurrent": 12640,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "soar-hooded-wooltech-top-navy",
@@ -1116,7 +1116,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:30",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-16",
@@ -1131,8 +1131,8 @@
      "url": "https://www.soarrunning.com/products/sls7m-nav-hooded-wooltech-top-dark-navy",
      "price": 10500,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:30",
-     "note": "",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 GBP 250；匯率約 42 折算；XS–XL 有貨（XXL 缺）",
      "history": [
       {
        "date": "2026-10-16",
@@ -1145,7 +1145,7 @@
    "reason": "英國高階跑步品牌，連帽上衣以美麗諾羊毛為底，胸前加防風織片，剪裁貼身，適合秋冬晨跑與越野；XS–XL 有貨。原價 GBP 250，以約 42 換算成台幣。",
    "prevCurrent": 10500,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
   },
   {
    "id": "asrv-ballistic-weave-25l-duffle",
@@ -1159,7 +1159,7 @@
    "status": "無變化",
    "purchased": false,
    "note": "",
-   "lastChecked": "2026-10-16 07:30",
+   "lastChecked": "2026-10-16 12:25",
    "history": [
     {
      "date": "2026-10-16",
@@ -1174,8 +1174,8 @@
      "url": "https://www.asrv.com/products/1157-ballistic-weave-25l-duffle-bag-black",
      "price": 6976,
      "stock": "有貨",
-     "lastChecked": "2026-10-16 07:30",
-     "note": "",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 US$218；匯率約 32 折算；有貨",
      "history": [
       {
        "date": "2026-10-16",
@@ -1188,7 +1188,136 @@
    "reason": "美國高階訓練品牌 ASRV 的彈道尼龍健身袋，耐磨又有俐落科技感，適合每天帶去健身房；有貨。原價 USD 218，以約 32 換算成台幣。",
    "prevCurrent": 6976,
    "prevStock": "有貨",
-   "runKey": "2026-10-16 AM"
+   "runKey": "2026-10-16 PM"
+  },
+  {
+   "id": "bandit-hitaisho-zip-pullover-black",
+   "name": "Bandit Running Men's Hitaishō Asymmetric Zip Pullover - Black",
+   "category": "服飾",
+   "store": "Bandit Running",
+   "url": "https://banditrunning.com/products/mens-hitaisho%E2%84%A2-asymmetric-zip-pullover",
+   "baseline": 6407,
+   "current": 6407,
+   "stock": "有貨",
+   "status": "無變化",
+   "purchased": false,
+   "note": "官網標價 US$198；匯率 32.36（10/16）折算；黑色 XS/S/M、Cocoa S/XL 有貨",
+   "lastChecked": "2026-10-16 12:25",
+   "history": [
+    {
+     "date": "2026-10-16",
+     "price": 6407
+    }
+   ],
+   "lowest": 6407,
+   "target": null,
+   "offers": [
+    {
+     "store": "Bandit Running",
+     "url": "https://banditrunning.com/products/mens-hitaisho%E2%84%A2-asymmetric-zip-pullover",
+     "price": 6407,
+     "stock": "有貨",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 US$198；匯率 32.36（10/16）折算；黑色 XS/S/M、Cocoa S/XL 有貨",
+     "history": [
+      {
+       "date": "2026-10-16",
+       "price": 6407
+      }
+     ]
+    }
+   ],
+   "pick": "unique",
+   "reason": "紐約跑團品牌 Bandit 的日式不對稱斜拉鍊跑步套頭衫，剪裁和拉鍊設計很少見，秋冬晨跑可直接當外層；黑色 XS–M 有貨。原價 USD 198，以約 32.36 換算成台幣。",
+   "prevCurrent": 6407,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
+  },
+  {
+   "id": "sansan-breeze-hooded-windbreaker-darkgrey",
+   "name": "San San Gear BREEZE Hooded Windbreaker - Dark Grey",
+   "category": "服飾",
+   "store": "San San Gear",
+   "url": "https://sansangear.com/products/breeze-hooded-windbreaker-dark-grey",
+   "baseline": 6483,
+   "current": 6483,
+   "stock": "有貨",
+   "status": "無變化",
+   "purchased": false,
+   "note": "官網標價 KRW 269,000；匯率 0.0241（10/16）折算；尺寸 1/2/3 有貨",
+   "lastChecked": "2026-10-16 12:25",
+   "history": [
+    {
+     "date": "2026-10-16",
+     "price": 6483
+    }
+   ],
+   "lowest": 6483,
+   "target": null,
+   "offers": [
+    {
+     "store": "San San Gear",
+     "url": "https://sansangear.com/products/breeze-hooded-windbreaker-dark-grey",
+     "price": 6483,
+     "stock": "有貨",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 KRW 269,000；匯率 0.0241（10/16）折算；尺寸 1/2/3 有貨",
+     "history": [
+      {
+       "date": "2026-10-16",
+       "price": 6483
+      }
+     ]
+    }
+   ],
+   "pick": "unique",
+   "reason": "韓國首爾高階跑步品牌 San San Gear 的可收納輕量連帽風衣，KAJIF 撥水尼龍、腋下打孔透氣、反光 logo，剪裁可搭跑步背心，風格和 NESCL 相近；1–3 號都有貨。原價 KRW 269,000，以約 0.0241 換算成台幣。",
+   "prevCurrent": 6483,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
+  },
+  {
+   "id": "norda-000-bd-obsidian-m",
+   "name": "norda 000 x Black Diamond - Men's Obsidian",
+   "category": "其他",
+   "store": "norda",
+   "url": "https://nordarun.com/products/000-m-norda-x-bd-obsidian",
+   "baseline": 9546,
+   "current": 9546,
+   "stock": "有貨",
+   "status": "無變化",
+   "purchased": false,
+   "note": "官網標價 US$295；匯率 32.36（10/16）折算；M8–M10、M11、M15 有貨",
+   "lastChecked": "2026-10-16 12:25",
+   "history": [
+    {
+     "date": "2026-10-16",
+     "price": 9546
+    }
+   ],
+   "lowest": 9546,
+   "target": null,
+   "offers": [
+    {
+     "store": "norda",
+     "url": "https://nordarun.com/products/000-m-norda-x-bd-obsidian",
+     "price": 9546,
+     "stock": "有貨",
+     "lastChecked": "2026-10-16 12:25",
+     "note": "官網標價 US$295；匯率 32.36（10/16）折算；M8–M10、M11、M15 有貨",
+     "history": [
+      {
+       "date": "2026-10-16",
+       "price": 9546
+      }
+     ]
+    }
+   ],
+   "pick": "unique",
+   "reason": "加拿大越野跑鞋品牌 norda 和 Black Diamond 的聯名款，鞋面用 Dyneema 超高強度纖維、Vibram 鞋底，做工和耐用度都是頂級，黑曜石配色低調耐看；美碼 M8–M11 多數有貨。原價 USD 295，以約 32.36 換算成台幣。",
+   "prevCurrent": 9546,
+   "prevStock": "有貨",
+   "runKey": "2026-10-16 PM"
   }
  ]
 }

@@ -39,11 +39,11 @@ function load(){
   fetch('data/log.json?'+Date.now()).then(function(r){return r.json()}).catch(function(){return {log:[]}}),
   fetch('data/feedback.json?'+Date.now()).then(function(r){return r.json()}).catch(function(){return []})]).then(function(a){
   FB.repo=toMap(a[2]);try{FB.local=JSON.parse(localStorage.getItem(FKEY))||{}}catch(e){FB.local={}}
-  S.items=a[0].items;S.updated=a[0].updated;S.log=a[1].log||[];S.local=false;
+  S.items=a[0].items;S.updated=a[0].updated;S.base=a[0].updated;S.log=a[1].log||[];S.local=false;
   var l=null;try{l=JSON.parse(localStorage.getItem(KEY))}catch(e){}
-  if(l&&l.items){S.items=l.items;S.log=l.log||S.log;S.local=true}
+  if(l&&l.items&&l.base===a[0].updated){S.items=l.items;S.log=l.log||S.log;S.local=true}
   S.items.forEach(norm);var h0=hashTab();if(h0){goTab(h0,h0==='drops')}else render()}).catch(function(e){$('notice').textContent='載入失敗：'+e.message})}
-function save(){S.local=true;try{localStorage.setItem(KEY,JSON.stringify({items:S.items,log:S.log}))}catch(e){}}
+function save(){S.local=true;try{localStorage.setItem(KEY,JSON.stringify({items:S.items,log:S.log,base:S.base}))}catch(e){}}
 function pct(i){return i.baseline?(i.current-i.baseline)/i.baseline*100:0}
 function dis(i){return vote(i.id)==='dislike'}
 function liked(i){return vote(i.id)==='like'}
